@@ -1,0 +1,99 @@
+<body class="bg-gradient-primary">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+              <div class="col-lg-7">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="pull-right">
+                      <app-select-language [position]="'dropleft'"></app-select-language>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h1 class="h4 text-gray-900 mb-4" translate>TITLE_REGISTER</h1>
+                    </div>
+                    <form class="user" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+                      <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <!-- <label for="username" class="label-custom-input " translate>USER</label> -->
+                          <input id="username" type="text" placeholder="{{ 'PLACEHOLDER_USER' | translate }}"
+                            required="" formControlName="username" autofocus=""
+                            class="form-control  form-control-user border-0 shadow-sm px-4 custom-input">
+                          <app-control-message [control]="$any(registerForm.controls['username'])">
+                          </app-control-message>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="text" class="form-control form-control-user" id="exampleLastName"
+                            placeholder="Last Name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <!-- <label for="username" class="label-custom-input " translate>EMAIL</label> -->
+                        <input id="email" type="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" required=""
+                          formControlName="email" autofocus=""
+                          class="form-control form-control-user border-0 shadow-sm px-4 custom-input">
+                        <app-control-message [control]="$any(registerForm.controls['email'])"></app-control-message>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <!-- <label for="password" class="label-custom-input " translate>PASSWORD</label> -->
+                          <input id="password" type="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}"
+                            required="" formControlName="password"
+                            class="form-control form-control-user border-0 shadow-sm px-4 text-primary custom-input">
+                          <app-control-message [control]="$any(registerForm.controls['password'])">
+                          </app-control-message>
+                        </div>
+                        <div class="col-sm-6">
+                          <!-- <label for="retype_password" class="label-custom-input " translate>CONFIRM_PASSWORD</label> -->
+                          <input id="retype_password" type="password"
+                            placeholder="{{ 'PLACEHOLDER_CONFIRM_PASSWORD' | translate }}" required=""
+                            formControlName="retype_password"
+                            class="form-control form-control-user border-0 shadow-sm px-4 text-primary custom-input">
+                          <app-control-message [control]="$any(registerForm.controls['retype_password'])">
+                          </app-control-message>
+                        </div>
+                      </div>
+                      <button id="register-btn" type="submit" [disabled]="!registerForm.valid" class="btn btn-primary btn-user btn-block">
+                        <span class="title-button" translate>DO_REGISTER</span>
+                      </button>
+                      <!-- <hr>
+                      <a href="#" class="btn btn-google btn-user btn-block">
+                        <i class="fab fa-google fa-fw"></i> Register with Google
+                      </a>
+                      <a href="#" class="btn btn-facebook btn-user btn-block">
+                        <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                      </a> -->
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                      <button type="button" (click)="back()" class="btn btn-link small" translate>ACCOUNT_EXISTS</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ngx-loading [show]="loading" [config]="{
+  backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+  backdropBorderRadius: '4px',
+  primaryColour: '#ffffff',
+  secondaryColour: '#ffffff',
+  tertiaryColour: '#ffffff'}"></ngx-loading>
+
+
+</body>

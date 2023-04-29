@@ -1,0 +1,15 @@
+<mat-toolbar class="toolbar">
+  <img src="" alt="logo" />
+  <span class="example-spacer"></span>
+  <app-select-language></app-select-language>
+  &nbsp;
+  <button mat-icon-button class="example-icon exit-button" *ngIf="isLogged()" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+<ngx-loading [show]="loading" [config]="{ 
+  backdropBorderRadius: '4px',
+        backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+        primaryColour: '#ffffff',
+        secondaryColour: '#ffffff',
+        tertiaryColour: '#ffffff'}"></ngx-loading>

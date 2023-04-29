@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 24px;">
+        <div class="col-sm-12">
+            <h1 translate>ADD_ITEM</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <mat-card>
+                <mat-card-content>
+                    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="albumId">Album ID</label>
+                            <input type="text" class="form-control" id="albumId" formControlName="albumId">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" formControlName="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="text" class="form-control" id="url" formControlName="url">
+                        </div>
+                        <div class="form-group">
+                            <label for="thumbnailUrl">Thumbnail URL</label>
+                            <input type="text" class="form-control" id="thumbnailUrl" formControlName="thumbnailUrl">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-danger btn-block" type="button" (click)="backToList()"
+                                        translate>BACK</button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-block" type="submit" translate>SAVE_BUTTON</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<ngx-loading [show]="submitting" [config]="{ backdropBorderRadius: '3px',
+        backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+        primaryColour: '#ffffff',
+        secondaryColour: '#ffffff',
+        tertiaryColour: '#ffffff'}"></ngx-loading>

@@ -1,0 +1,38 @@
+.modal-backdrop.show {
+  opacity: .5;
+}
+
+modal-dialog .ngx-modal.fade.show {
+  opacity: 1;
+}
+
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+}
+
+modal-dialog .modal-dialog {
+  height: 90%;
+}
+
+modal-dialog .modal-dialog .modal-content {
+  height: 100%;
+}
+
+modal-dialog .modal-dialog .modal-content .modal-body {
+  height: 100%;
+  padding: 16px;
+  padding-bottom: 140px;
+}
+
+modal-dialog app-modal-associate-users > div {
+  max-height: 100%;
+  overflow: auto;
+}
+
+modal-dialog .modal-dialog .modal-content .modal-footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}

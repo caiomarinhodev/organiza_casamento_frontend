@@ -1,0 +1,23 @@
+button.dropdown-toggle {
+    width: 23px;
+    height: 21px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -0.04em;
+    color: #333333;
+
+    padding: 0 6px;
+    text-transform: uppercase;
+}
+
+.dropdown {
+    margin-right: 28px;
+}
+
+.dropdown-menu {
+    padding: 16px;
+    transform: translate3d(-125px, 28px, 0px);
+}

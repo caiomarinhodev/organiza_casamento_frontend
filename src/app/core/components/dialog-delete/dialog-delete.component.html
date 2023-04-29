@@ -1,0 +1,8 @@
+<h1 mat-dialog-title translate>REMOVE_ITEM_TITLE</h1>
+<div mat-dialog-content>
+    <p>Você deseja remover o item #{{ data.id }}?</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close translate>{{'CANCEL'|translate}}</button>
+    <button mat-button [mat-dialog-close]="data.id" cdkFocusInitial>{{'YES_BUTTON'|translate}}</button>
+</div>

@@ -1,0 +1,28 @@
+<!-- <div class="dropdown {{position}}">
+  <button data-toggle="dropdown" class="btn btn-link dropdown-toggle" data-toogle="dropdown" aria-haspopup="true"
+    aria-expanded="false" type="button" aria-expanded="true">{{lang}}
+  </button>
+  <ul class="dropdown-menu">
+    <li><a (click)="setLang('pt')" class="text-capitalize language-text" translate>PORTUGUESE</a></li>
+    <li><a (click)="setLang('en')" class="text-capitalize language-text" translate>ENGLISH</a></li>
+    <li><a (click)="setLang('es')" class="text-capitalize language-text" translate>SPANISH</a></li>
+  </ul>
+</div> -->
+
+<div class="nav-item dropdown no-arrow">
+  <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    <span class="text-capitalize language-text" style="color: #0D0D0D;">{{lang}}</span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="langDropdown">
+    <label class="dropdown-item" href="#" (click)="setLang('pt')" translate>
+      PORTUGUESE
+    </label>
+    <label class="dropdown-item" href="#" (click)="setLang('en')" translate>
+      ENGLISH
+    </label>
+    <label class="dropdown-item" href="#" (click)="setLang('es')" translate>
+      SPANISH
+    </label>
+  </div>
+</div>
