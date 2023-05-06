@@ -107,5 +107,10 @@
   "CHANGE_PASSWORD_SUCCESS": "Senha alterada com sucesso.",
   "ERROR_CHANGE_PASSWORD": "Erro ao alterar senha",
   "FORGOT_PASSWORD": "Esqueceu a senha? clique aqui!",
-  "LOGOUT": "Sair"
+  "LOGOUT": "Sair",
+  "PLACEHOLDER_TYPE_USER": "Insira seu tipo de usuário",
+  "GROOM": "Noivos",
+  "SUPPLIER": "Fornecedor",
+  "PLACEHOLDER_NAME_USER": "Insira seu nome",
+  "PLACEHOLDER_LAST_NAME_USER": "Sobrenome"
 }

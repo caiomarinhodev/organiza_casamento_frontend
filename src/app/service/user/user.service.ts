@@ -20,9 +20,12 @@ export class UserService extends BaseService {
     return this.getUser() !== null;
   }
 
-  register(username: any, email: any, password: any) {
+  register(username: any, email: any, password: any, type_user: any, first_name: any, last_name: any) {
     return this.post(AuthURL.REGISTER,
       {
+        type: type_user,
+        first_name: first_name,
+        last_name: last_name,
         username: username,
         email: email,
         password: password
