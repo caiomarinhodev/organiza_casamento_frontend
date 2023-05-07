@@ -1,20 +1,64 @@
-<div class="row" style="margin-top: 24px;">
-    <div class="col-sm-12">
-        <h1 translate>DASHBOARD</h1>
-    </div>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800" translate>DASHBOARD</h1>
+  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+    ><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a
+  >
 </div>
+
+<!-- Content Row -->
 <div class="row">
-    <div class="col-sm-12">
-        <mat-card>
-            <mat-card-content>
-                <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" [options]="chartOptions"
-                    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
-            </mat-card-content>
-        </mat-card>
-    </div>
+  <div class="col-3">
+    <app-card
+      [title]="'CARD_TITLE_TOTAL_GUESTS'"
+      [value]="'100'"
+      [icon]="'fas fa-users'"
+      [color]="'primary'"
+    ></app-card>
+  </div>
+  <div class="col-3">
+    <app-card
+      [title]="'CARD_TITLE_TOTAL_SUPPLIERS'"
+      [value]="'0'"
+      [icon]="'fas fa-user'"
+      [color]="'success'"
+    ></app-card>
+  </div>
+  <div class="col-3">
+    <app-card
+      [title]="'CARD_TITLE_TOTAL_BUDGET'"
+      [value]="'8000'"
+      [icon]="'fas fa-dollar-sign'"
+      [color]="'success'"
+    ></app-card>
+  </div>
+  <div class="col-3">
+    <app-card
+      [title]="'CARD_DATE'"
+      [value]="'12/01/2024'"
+      [icon]="'fas fa-calendar'"
+      [color]="'warning'"
+    ></app-card>
+  </div>
 </div>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px',
-        backdropBackgroundColour: 'rgba(0,0,0,0.8)',
-        primaryColour: '#ffffff',
-        secondaryColour: '#ffffff',
-        tertiaryColour: '#ffffff'}"></ngx-loading>
+
+<!-- Content Row -->
+
+<div class="row">
+  <div class="col-6 mt-6">
+    <app-checklist></app-checklist>
+  </div>
+  <div class="col-6 mt-6">
+    <mat-calendar></mat-calendar>
+  </div>
+</div>
+<ngx-loading
+  [show]="loading"
+  [config]="{
+    backdropBorderRadius: '3px',
+    backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+    primaryColour: '#ffffff',
+    secondaryColour: '#ffffff',
+    tertiaryColour: '#ffffff'
+  }"
+></ngx-loading>

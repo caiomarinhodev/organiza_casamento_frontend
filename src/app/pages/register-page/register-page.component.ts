@@ -34,7 +34,7 @@ export class RegisterPageComponent extends BaseComponent implements OnInit {
       first_name: new FormControl(undefined, [
         Validators.required,
       ]),
-      last_name: new FormControl(undefined, []),
+      last_name: new FormControl(undefined, [Validators.required]),
       username: new FormControl(undefined, [
         Validators.required,
         Validators.minLength(5),
