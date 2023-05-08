@@ -107,5 +107,10 @@
   "CHANGE_PASSWORD_SUCCESS": "Contraseña cambiada con éxito.",
   "ERROR_CHANGE_PASSWORD": "Error al cambiar la contraseña",
   "FORGOT_PASSWORD": "¿Se te olvidó tu contraseña? Restablecer!",
-  "LOGOUT": "Cerrar sesión"
+  "LOGOUT": "Cerrar sesión",
+  "PLACEHOLDER_TYPE_USER": "Introduce tu tipo de usuario",
+  "GROOM": "Novio",
+  "SUPPLIER": "Proveedor",
+  "PLACEHOLDER_NAME_USER": "Introduce tu nombre",
+  "PLACEHOLDER_LAST_NAME_USER": "Introduce tu apellido"
 }

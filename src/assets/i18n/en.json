@@ -107,5 +107,10 @@
   "CHANGE_PASSWORD_SUCCESS": "Password successfully changed.",
   "ERROR_CHANGE_PASSWORD": "Error changing password",
   "FORGOT_PASSWORD": "Forgot password? Reset!",
-  "LOGOUT": "Logout"
+  "LOGOUT": "Logout",
+  "PLACEHOLDER_TYPE_USER": "Enter your type user",
+  "GROOM": "Bride and Groom",
+  "SUPPLIER": "Supplier",
+  "PLACEHOLDER_NAME_USER": "Enter your name",
+  "PLACEHOLDER_LAST_NAME_USER": "Enter your last name"
 }

@@ -13,6 +13,9 @@ import { ControlMessageModule } from 'src/app/core/components/control-message/co
 import { SelectLanguageModule } from 'src/app/core/components/select-language/select-language.module';
 import { DashboardComponent } from './dashboard.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { CardModule } from 'src/app/core/components/card/card.module';
+import { ChecklistModule } from 'src/app/core/components/checklist/checklist.module';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
 
@@ -35,7 +38,10 @@ import { HighchartsChartModule } from 'highcharts-angular';
         AngularMaterialModule,
         ToolbarModule,
         SelectLanguageModule,
-        HighchartsChartModule
+        HighchartsChartModule,
+        CardModule,
+        ChecklistModule,
+        MatMomentDateModule,
     ],
     providers: [UserService]
 })

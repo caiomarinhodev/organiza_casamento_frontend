@@ -35,7 +35,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   rate$: Subscription;
   chardata: any[] = [];
   chartOptions: any;
-  subject = webSocket('wss://ws.coincap.io/prices?assets=bitcoin')
+  // subject = webSocket('wss://ws.coincap.io/prices?assets=bitcoin')
 
   loading = false;
 
@@ -48,27 +48,26 @@ export class DashboardComponent extends BaseComponent implements OnInit {
 
   override ngOnInit(): void {
     super.ngOnInit();
-    this.loading = true;
 
-    this.rate = this.subject.pipe(
-      concatMap(item => of(item).pipe(delay(1000)))
-    ).subscribe(data => {
-      this.rate = data;
-      this.chardata.push(Number(this.rate.bitcoin))
-      this.chartOptions = {
-        series: [{
-          data: this.chardata,
-        },],
-        chart: {
-          type: "line",
-          zoomType: 'x'
-        },
-        title: {
-          text: "BTC/USD each second",
-        },
-      };
-      this.loading = false;
-    });
+    // this.rate = this.subject.pipe(
+    //   concatMap(item => of(item).pipe(delay(1000)))
+    // ).subscribe(data => {
+    //   this.rate = data;
+    //   this.chardata.push(Number(this.rate.bitcoin))
+    //   this.chartOptions = {
+    //     series: [{
+    //       data: this.chardata,
+    //     },],
+    //     chart: {
+    //       type: "line",
+    //       zoomType: 'x'
+    //     },
+    //     title: {
+    //       text: "BTC/USD each second",
+    //     },
+    //   };
+    //   this.loading = false;
+    // });
   }
 
 
