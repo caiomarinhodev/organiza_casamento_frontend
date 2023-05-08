@@ -16,6 +16,10 @@ jobs:
           node-version: '14.20.0'
       - run: npm install
       - run: npm run build
+      - uses: actions/upload-artifact@master
+        with:
+          name: appcore
+          path: ./dist/appcore
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
