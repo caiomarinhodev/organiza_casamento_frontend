@@ -33,6 +33,7 @@ import { RegisterPagenModule } from './pages/register-page/register-page.module'
 import { ChangePassModule } from './pages/reset-password/change-pass/change-pass.module';
 import { ResetPassModule } from './pages/reset-password/reset-pass/reset-pass.module';
 import { AngularMaterialModule } from './shared/interface/angular-material.module';
+import { EventModule } from './pages/event/event.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -75,7 +76,8 @@ export function createTranslateLoader(http: HttpClient) {
     ItemCreateModule,
     ItemDetailModule,
     ItemUpdateModule,
-    ItemDeleteModule
+    ItemDeleteModule,
+    EventModule
   ],
   providers: [
     AppTranslateService,

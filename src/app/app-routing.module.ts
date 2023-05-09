@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { ChangePassComponent } from './pages/reset-password/change-pass/change-pass.component';
 import { ResetPassComponent } from './pages/reset-password/reset-pass/reset-pass.component';
+import { EventComponent } from './pages/event/event.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { title: '' } },
@@ -27,7 +28,13 @@ const routes: Routes = [
         data: {
         },
         component: DashboardComponent,
-      }
+      },
+      {
+        path: 'event/:id',
+        data: {
+        },
+        component: EventComponent,
+      },
     ]
   },
   {

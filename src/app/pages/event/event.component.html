@@ -1,0 +1,157 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800" translate>MY_EVENT</h1>
+</div>
+<div class="row">
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name" translate>NAME</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date" translate>DATE</label>
+            <input
+              type="date"
+              class="form-control"
+              id="date"
+              formControlName="date"
+            />
+          </div>
+          <!-- <div class="form-group">
+            <label for="name_bride" translate>NAME_BRIDE</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name_bride"
+              formControlName="name_bride"
+            />
+          </div>
+          <div class="form-group">
+            <label for="birthdate_bride" translate>BIRTHDATE_BRIDE</label>
+            <input
+              type="date"
+              class="form-control"
+              id="birthdate_bride"
+              formControlName="birthdate_bride"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name_groom" translate>NAME_GROOM</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name_groom"
+              formControlName="name_groom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="birthdate_groom" translate>BIRTHDATE_GROOM</label>
+            <input
+              type="date"
+              class="form-control"
+              id="birthdate_groom"
+              formControlName="birthdate_groom"
+            />
+          </div> -->
+          <div class="form-group">
+            <label for="size" translate>SIZE</label>
+            <select class="form-control" id="size" formControlName="size">
+              <option value="Elopment Wedding" translate>Elopment Wedding</option>
+              <option value="Mini Wedding" translate>Mini Wedding</option>
+              <option value="Casamento Pequeno" translate>Casamento Pequeno</option>
+              <option value="Casamento Médio" translate>Casamento Médio</option>
+              <option value="Casamento Grande" translate>Casamento Grande</option>
+              <option value="Mega Wedding" translate>Mega Wedding</option>
+              <option value="Destination Wedding" translate>Destination Wedding</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="style" translate>STYLE</label>
+            <select class="form-control" id="style" formControlName="style">
+              <!-- <option value="Classic" translate>Classic</option>
+              <option value="Modern" translate>Modern</option>
+              <option value="Rustic" translate>Rustic</option>
+              <option value="Vintage" translate>Vintage</option>
+              <option value="Boho" translate>Boho</option>
+              <option value="Beach" translate>Beach</option>
+              <option value="Destination" translate>Destination</option>
+              <option value="Garden" translate>Garden</option>
+              <option value="Industrial" translate>Industrial</option>
+              <option value="Romantic" translate>Romantic</option>
+              <option value="Alternative" translate>Alternative</option>
+              <option value="Eco-Friendly" translate>Eco-Friendly</option>
+              <option value="Glamorous" translate>Glamorous</option>
+              <option value="Minimalist" translate>Minimalist</option>
+              <option value="Retro" translate>Retro</option>
+              <option value="Other" translate>Other</option> -->
+              <option value="Classico / Tradicional" translate>Classico / Tradicional</option>
+              <option value="Moderno / Minimalista" translate>Moderno / Minimalista</option>
+              <option value="Vintage / Rustico" translate>Vintage / Rustico</option>
+              <option value="Praia / Campo" translate>Praia / Campo</option>
+              <option value="Temático" translate>Temático</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget" translate>BUDGET</label>
+            <input
+              type="text"
+              class="form-control"
+              id="budget"
+              formControlName="budget"
+            />
+          </div>
+          <div class="form-group">
+            <label for="guests" translate>GUESTS</label>
+            <input
+              type="text"
+              class="form-control"
+              id="guests"
+              formControlName="guests"
+            />
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <button
+                  class="btn btn-danger btn-block"
+                  type="button"
+                  (click)="backToList()"
+                  translate
+                >
+                  BACK
+                </button>
+              </div>
+              <div class="col-6">
+                <button
+                  class="btn btn-primary btn-block"
+                  type="submit"
+                  translate
+                >
+                  UPDATE_BUTTON
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<ngx-loading
+  [show]="loading"
+  [config]="{
+    backdropBorderRadius: '3px',
+    backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+    primaryColour: '#ffffff',
+    secondaryColour: '#ffffff',
+    tertiaryColour: '#ffffff'
+  }"
+></ngx-loading>

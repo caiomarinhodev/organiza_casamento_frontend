@@ -49,7 +49,7 @@ export class SearchService extends BaseService {
    * @returns {Observable<Object>}
    */
   getOne(url: string, id: string) {
-    return this.get(url + '/' + id, new HttpParams());
+    return this.get(url + '/' + id + '/', new HttpParams());
   }
 
   getURL(url: string) {

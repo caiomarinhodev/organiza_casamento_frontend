@@ -10,6 +10,7 @@ export class CardComponent implements OnInit {
   @Input() value?: string;
   @Input() color?: string;
   @Input() icon?: string;
+  @Input() variant?: string = "default";
   constructor() {}
 
   ngOnInit() {}

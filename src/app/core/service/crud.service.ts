@@ -38,7 +38,7 @@ export class CrudService extends SearchService {
    * @returns {Observable<Object>}
    */
   update(url: string, id: string, item: {} | undefined) {
-    return this.put(url + '/' + id, item);
+    return this.put(url + '/' + id + '/', item);
   }
 
   /**
@@ -50,7 +50,7 @@ export class CrudService extends SearchService {
    * @returns {Observable<Object>}
    */
   updatePartial(url: string, id: string, item: {} | undefined) {
-    return this.patch(url + '/' + id, item);
+    return this.patch(url + '/' + id + '/', item);
   }
 
   /**
@@ -61,6 +61,6 @@ export class CrudService extends SearchService {
    * @returns {Observable<Object>}
    */
   remove(url: string, id: string) {
-    return this.delete(url + '/' + id);
+    return this.delete(url + '/' + id + '/');
   }
 }

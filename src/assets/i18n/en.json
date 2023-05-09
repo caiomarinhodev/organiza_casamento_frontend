@@ -121,5 +121,10 @@
   "MY_GUESTS": "My Guests",
   "SUPPLIERS": "Suppliers",
   "ARTEFACTS": "Artefacts",
-  "PROFILE": "Profile"
+  "PROFILE": "Profile",
+  "NAME": "Name",
+  "SIZE": "Size",
+  "STYLE": "Style",
+  "BUDGET": "Budget",
+  "GUESTS": "Guests"
 }

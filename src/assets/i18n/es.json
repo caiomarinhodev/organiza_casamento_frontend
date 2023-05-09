@@ -121,5 +121,9 @@
   "MY_GUESTS": "Mis invitados",
   "SUPPLIERS": "Proveedores",
   "ARTEFACTS": "Artefactos",
-  "PROFILE": "Perfil"
+  "PROFILE": "Perfil",
+  "SIZE": "Tamaño",
+  "STYLE": "Estilo",
+  "BUDGET": "Presupuesto",
+  "GUESTS": "Invitados"
 }

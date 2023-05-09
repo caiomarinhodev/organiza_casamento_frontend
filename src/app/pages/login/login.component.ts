@@ -22,8 +22,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
     super();
     this.loginForm = this.formBuilder.group(
       {
-        username: new FormControl(undefined, [Validators.required,
-        CustomValidators.noWhitespaceValidator]),
+        username: new FormControl(undefined, [Validators.required]),
         password: new FormControl(undefined, [Validators.required,
         Validators.minLength(5), Validators.required, Validators.maxLength(255)]),
         rememberMe: new FormControl(undefined, [])

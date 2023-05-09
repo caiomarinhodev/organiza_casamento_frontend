@@ -121,5 +121,10 @@
   "MY_GUESTS": "Meus convidados",
   "SUPPLIERS": "Fornecedores",
   "ARTEFACTS": "Artefatos",
-  "PROFILE": "Perfil"
+  "PROFILE": "Perfil",
+  "NAME": "Nome",
+  "SIZE": "Tamanho do Evento",
+  "STYLE": "Estilo do Evento",
+  "BUDGET": "Orçamento previsto",
+  "GUESTS": "Numero de Convidados"
 }
