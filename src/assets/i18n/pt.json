@@ -112,5 +112,14 @@
   "GROOM": "Noivos",
   "SUPPLIER": "Fornecedor",
   "PLACEHOLDER_NAME_USER": "Insira seu nome",
-  "PLACEHOLDER_LAST_NAME_USER": "Sobrenome"
+  "PLACEHOLDER_LAST_NAME_USER": "Sobrenome",
+  "CARD_TITLE_TOTAL_GUESTS": "Total de Convidados",
+  "CARD_TITLE_TOTAL_SUPPLIERS": "Fornecedores",
+  "CARD_TITLE_TOTAL_BUDGET": "Orçamento",
+  "CARD_DATE": "Data do evento",
+  "MY_EVENT": "Meu evento",
+  "MY_GUESTS": "Meus convidados",
+  "SUPPLIERS": "Fornecedores",
+  "ARTEFACTS": "Artefatos",
+  "PROFILE": "Perfil"
 }

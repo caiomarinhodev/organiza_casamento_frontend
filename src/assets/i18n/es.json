@@ -112,5 +112,14 @@
   "GROOM": "Novio",
   "SUPPLIER": "Proveedor",
   "PLACEHOLDER_NAME_USER": "Introduce tu nombre",
-  "PLACEHOLDER_LAST_NAME_USER": "Introduce tu apellido"
+  "PLACEHOLDER_LAST_NAME_USER": "Introduce tu apellido",
+  "CARD_TITLE_TOTAL_GUESTS": "Invitados totales",
+  "CARD_TITLE_TOTAL_SUPPLIERS": "Total de Proveedores",
+  "CARD_TITLE_TOTAL_BUDGET": "Presupuesto total",
+  "CARD_DATE": "Fecha de la boda",
+  "MY_EVENT": "Mi Evento",
+  "MY_GUESTS": "Mis invitados",
+  "SUPPLIERS": "Proveedores",
+  "ARTEFACTS": "Artefactos",
+  "PROFILE": "Perfil"
 }

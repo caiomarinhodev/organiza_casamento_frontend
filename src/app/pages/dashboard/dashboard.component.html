@@ -10,7 +10,7 @@
 <div class="row">
   <div class="col-3">
     <app-card
-      [title]="'CARD_TITLE_TOTAL_GUESTS'"
+      [title]="translate.instant('CARD_TITLE_TOTAL_GUESTS')"
       [value]="'100'"
       [icon]="'fas fa-users'"
       [color]="'primary'"
@@ -18,24 +18,24 @@
   </div>
   <div class="col-3">
     <app-card
-      [title]="'CARD_TITLE_TOTAL_SUPPLIERS'"
+      [title]="translate.instant('CARD_TITLE_TOTAL_SUPPLIERS')"
       [value]="'0'"
       [icon]="'fas fa-user'"
-      [color]="'success'"
+      [color]="'info'"
     ></app-card>
   </div>
   <div class="col-3">
     <app-card
-      [title]="'CARD_TITLE_TOTAL_BUDGET'"
-      [value]="'8000'"
+      [title]="translate.instant('CARD_TITLE_TOTAL_BUDGET')"
+      [value]="formatCoin(8000)"
       [icon]="'fas fa-dollar-sign'"
       [color]="'success'"
     ></app-card>
   </div>
   <div class="col-3">
     <app-card
-      [title]="'CARD_DATE'"
-      [value]="'12/01/2024'"
+      [title]="translate.instant('CARD_DATE')"
+      [value]="resultCountdown"
       [icon]="'fas fa-calendar'"
       [color]="'warning'"
     ></app-card>

@@ -112,5 +112,14 @@
   "GROOM": "Bride and Groom",
   "SUPPLIER": "Supplier",
   "PLACEHOLDER_NAME_USER": "Enter your name",
-  "PLACEHOLDER_LAST_NAME_USER": "Enter your last name"
+  "PLACEHOLDER_LAST_NAME_USER": "Enter your last name",
+  "CARD_TITLE_TOTAL_GUESTS": "Total Guests",
+  "CARD_TITLE_TOTAL_SUPPLIERS": "Total Suppliers",
+  "CARD_TITLE_TOTAL_BUDGET": "Total Budget",
+  "CARD_DATE": "Wedding Date",
+  "MY_EVENT": "My Event",
+  "MY_GUESTS": "My Guests",
+  "SUPPLIERS": "Suppliers",
+  "ARTEFACTS": "Artefacts",
+  "PROFILE": "Profile"
 }
