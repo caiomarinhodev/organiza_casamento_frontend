@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-import { SearchService } from './search.service';
+import { SearchService } from "./search.service";
 
 /**
  * The 'CrudService' class provides the common API and operations
@@ -10,7 +10,6 @@ import { SearchService } from './search.service';
  */
 @Injectable()
 export class CrudService extends SearchService {
-
   /**
    * Constructor.
    */
@@ -26,7 +25,7 @@ export class CrudService extends SearchService {
    * @returns {Observable<Object>}
    */
   insert(url: string, item: {} | undefined) {
-    return this.post(url, item);
+    return this.post(url + "/", item);
   }
 
   /**
@@ -38,7 +37,7 @@ export class CrudService extends SearchService {
    * @returns {Observable<Object>}
    */
   update(url: string, id: string, item: {} | undefined) {
-    return this.put(url + '/' + id + '/', item);
+    return this.put(url + "/" + id + "/", item);
   }
 
   /**
@@ -50,7 +49,7 @@ export class CrudService extends SearchService {
    * @returns {Observable<Object>}
    */
   updatePartial(url: string, id: string, item: {} | undefined) {
-    return this.patch(url + '/' + id + '/', item);
+    return this.patch(url + "/" + id + "/", item);
   }
 
   /**
@@ -61,6 +60,6 @@ export class CrudService extends SearchService {
    * @returns {Observable<Object>}
    */
   remove(url: string, id: string) {
-    return this.delete(url + '/' + id + '/');
+    return this.delete(url + "/" + id + "/");
   }
 }

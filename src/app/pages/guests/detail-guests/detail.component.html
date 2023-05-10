@@ -1,0 +1,124 @@
+<div class="container-fluid">
+  <div class="row" style="margin-top: 24px">
+    <div class="col-sm-12">
+      <h1 translate>VIEW_GUEST</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <mat-card>
+        <mat-card-content>
+          <div class="form-group">
+            <label for="albumId">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              value="{{ item.id }}"
+              [readOnly]="true"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="name" translate>NAME</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              value="{{ item.name }}"
+              [readOnly]="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email" translate>EMAIL</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              value="{{ item.email }}"
+              [readOnly]="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone" translate>PHONE</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              value="{{ item.phone }}"
+              [readOnly]="true"
+            />
+          </div>
+          <div class="row col-12 form-group">
+            <div class="">
+              <label for="confirmed" translate>CONFIRMED</label>
+              <input
+                type="checkbox"
+                class="form-control"
+                id="confirmed"
+                [checked]="item.confirmed"
+                [readOnly]="true"
+              />
+            </div>
+          </div>
+          <div class="row col-12 form-group">
+            <div class="">
+              <label for="has_dependents" translate>HAS_DEPENDENTS</label>
+              <input
+                type="checkbox"
+                class="form-control"
+                id="has_dependents"
+                [checked]="item.has_dependents"
+                [readOnly]="true"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dependents" translate>DEPENDENTS</label>
+            <input
+              type="number"
+              class="form-control"
+              id="dependents"
+              value="{{ item.dependents }}"
+              [readOnly]="true"
+            />
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <button
+                  class="btn btn-danger btn-block"
+                  type="button"
+                  (click)="backToList()"
+                  translate
+                >
+                  BACK
+                </button>
+              </div>
+              <div class="col-6">
+                <button
+                  class="btn btn-primary btn-block"
+                  type="button"
+                  (click)="goToEdit(item.id)"
+                  translate
+                >
+                  EDIT_BUTTON
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<ngx-loading
+  [show]="loading"
+  [config]="{
+    backdropBorderRadius: '3px',
+    backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+    primaryColour: '#ffffff',
+    secondaryColour: '#ffffff',
+    tertiaryColour: '#ffffff'
+  }"
+></ngx-loading>

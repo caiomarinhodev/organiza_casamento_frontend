@@ -125,5 +125,18 @@
   "SIZE": "Tamaño",
   "STYLE": "Estilo",
   "BUDGET": "Presupuesto",
-  "GUESTS": "Invitados"
+  "GUESTS": "Invitados",
+  "LIST_GUESTS": "Lista de invitados",
+  "ADD_GUEST": "Agregar invitado",
+  "EDIT_GUEST": "Editar invitado",
+  "REMOVE_GUEST": "Eliminar invitado",
+  "CONFIRMED": "Confirmado",
+  "PHONE": "Teléfono",
+  "HAS_DEPENDENTS": "¿Tiene dependientes?",
+  "DEPENDENTS": "Dependientes",
+  "YES": "Sí",
+  "NO": "No",
+  "VIEW_GUEST": "Ver invitado",
+  "UPDATE_GUEST": "Actualizar invitado",
+  "DELETE_GUEST": "Eliminar invitado"
 }

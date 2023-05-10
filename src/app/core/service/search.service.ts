@@ -38,7 +38,7 @@ export class SearchService extends BaseService {
   search(url: string, pagination = {}, filters = []): any {
     const params = new HttpParams().set('filter', JSON.stringify(Object.assign(pagination, { filters: filters })));
 
-    return this.get(url, params);
+    return this.get(url + '/', params);
   }
 
   /**
@@ -53,7 +53,7 @@ export class SearchService extends BaseService {
   }
 
   getURL(url: string) {
-    return this.get(url, new HttpParams());
+    return this.get(url + '/', new HttpParams());
   }
 
 

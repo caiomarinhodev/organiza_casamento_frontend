@@ -126,5 +126,18 @@
   "SIZE": "Tamanho do Evento",
   "STYLE": "Estilo do Evento",
   "BUDGET": "Orçamento previsto",
-  "GUESTS": "Numero de Convidados"
+  "GUESTS": "Numero de Convidados",
+  "LIST_GUESTS": "Lista de Convidados",
+  "ADD_GUEST": "Adicionar Convidado",
+  "EDIT_GUEST": "Editar Convidado",
+  "REMOVE_GUEST": "Remover Convidado",
+  "CONFIRMED": "Confirmado",
+  "PHONE": "Telefone",
+  "HAS_DEPENDENTS": "Tem Dependentes",
+  "DEPENDENTS": "Dependentes",
+  "YES": "Sim",
+  "NO": "Não",
+  "VIEW_GUEST": "Visualizar Convidado",
+  "UPDATE_GUEST": "Atualizar Convidado",
+  "DELETE_GUEST": "Remover Convidado"
 }

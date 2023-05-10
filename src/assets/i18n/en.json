@@ -126,5 +126,18 @@
   "SIZE": "Size",
   "STYLE": "Style",
   "BUDGET": "Budget",
-  "GUESTS": "Guests"
+  "GUESTS": "Guests",
+  "LIST_GUESTS": "List Guests",
+  "ADD_GUEST": "Add Guest",
+  "EDIT_GUEST": "Edit Guest",
+  "REMOVE_GUEST": "Remove Guest",
+  "CONFIRMED": "Confirmed",
+  "PHONE": "Phone",
+  "HAS_DEPENDENTS": "Has Dependents",
+  "DEPENDENTS": "Dependents",
+  "YES": "Yes",
+  "NO": "No",
+  "VIEW_GUEST": "View Guest",
+  "UPDATE_GUEST": "Update Guest",
+  "DELETE_GUEST": "Delete Guest"
 }
