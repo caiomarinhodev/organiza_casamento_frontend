@@ -138,5 +138,6 @@
   "NO": "No",
   "VIEW_GUEST": "Ver invitado",
   "UPDATE_GUEST": "Actualizar invitado",
-  "DELETE_GUEST": "Eliminar invitado"
+  "DELETE_GUEST": "Eliminar invitado",
+  "UPDATE_PROFILE": "Actualizar perfil"
 }

@@ -5,8 +5,12 @@ import { AppInjector } from "../../app.injector";
 import { NotificationModule } from "../../core/module/notification/notification.module";
 import { UserService } from "../../service/user/user.service";
 
+type DataUserProps = {
+  id: number;
+};
+
 type UserProps = {
-  data_user: object;
+  data_user: DataUserProps;
   event: number;
   profile_data: object;
   token: string;
@@ -29,7 +33,7 @@ export class HomePageComponent {
   logged = false;
 
   user: UserProps = {
-    data_user: {},
+    data_user: { id: 0 },
     event: 0,
     profile_data: {},
     token: "",

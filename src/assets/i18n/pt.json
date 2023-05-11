@@ -139,5 +139,6 @@
   "NO": "Não",
   "VIEW_GUEST": "Visualizar Convidado",
   "UPDATE_GUEST": "Atualizar Convidado",
-  "DELETE_GUEST": "Remover Convidado"
+  "DELETE_GUEST": "Remover Convidado",
+  "UPDATE_PROFILE": "Atualizar Perfil"
 }

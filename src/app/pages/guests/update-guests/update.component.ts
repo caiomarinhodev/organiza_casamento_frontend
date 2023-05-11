@@ -1,31 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
-import { BaseCreateComponent } from "src/app/core/interface/base-create.component";
+import { BaseEditComponent } from "src/app/core/interface/base-edit.component";
 
 @Component({
-  selector: "app-add-guests",
-  templateUrl: "./add.component.html",
-  styleUrls: ["./add.component.css"],
+  selector: "app-guests-update",
+  templateUrl: "./update.component.html",
+  styleUrls: ["./update.component.css"],
 })
-export class AddGuestComponent extends BaseCreateComponent implements OnInit {
-  /**
-   * Constructor.
-   *
-   * @param {ActivatedRoute} route
-   * @param {TagsUtilService} tagsUtilService
-   */
+export class UpdateGuestComponent extends BaseEditComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
     super();
   }
 
-  /**
-   * Gets the form controls.
-   *
-   * @returns {Object}
-   * @override
-   */
-  getFormControls(): Object {
+  override getFormControls(): Object {
     return {
       id: new FormControl(undefined, []),
       name: new FormControl(undefined, [Validators.required]),
@@ -39,39 +27,21 @@ export class AddGuestComponent extends BaseCreateComponent implements OnInit {
     };
   }
 
-  updateDependents(event: any) {
-    if (!event.checked) {
-      this.createForm.controls["dependents"].setValue(0);
-      return;
-    }
-  }
-
-  /**
-   * Gets the service URL.
-   *
-   * @returns {string}
-   * @override
-   */
   getServiceURL(): string {
     return "guests";
   }
 
-  /**
-   * Gets the router URL>
-   *
-   * @returns {string}
-   * @override
-   */
   getRouterURL(): string {
     return "guests";
   }
 
-  /**
-   * Gets the activated route.
-   *
-   * @returns {ActivatedRoute}
-   * @override
-   */
+  updateDependents(event: any) {
+    if (!event.checked) {
+      this.editForm.controls["dependents"].setValue(0);
+      return;
+    }
+  }
+
   override getActivatedRoute(): ActivatedRoute {
     return this.route;
   }

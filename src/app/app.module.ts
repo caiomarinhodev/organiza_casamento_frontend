@@ -36,6 +36,9 @@ import { EventModule } from "./pages/event/event.module";
 import { ListGuestsModule } from "./pages/guests/list-guests/list-guests.module";
 import { AddGuestModule } from "./pages/guests/add-guests/add.module";
 import { DetailGuestModule } from "./pages/guests/detail-guests/detail.module";
+import { UpdateGuestModule } from "./pages/guests/update-guests/update.module";
+import { DeleteGuestModule } from "./pages/guests/delete-guests/delete.module";
+import { UpdateProfileModule } from "./pages/update-profile/update.module";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -78,7 +81,10 @@ export function createTranslateLoader(http: HttpClient) {
     EventModule,
     ListGuestsModule,
     AddGuestModule,
-    DetailGuestModule
+    DetailGuestModule,
+    UpdateGuestModule,
+    DeleteGuestModule,
+    UpdateProfileModule
   ],
   providers: [
     AppTranslateService,

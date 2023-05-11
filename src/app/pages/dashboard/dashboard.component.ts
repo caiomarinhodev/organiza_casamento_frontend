@@ -29,6 +29,10 @@ export class DashboardComponent extends BaseComponent implements OnInit {
 
   user: any;
 
+  guests: any;
+
+  totalGuests = 0;
+
   protected service: CrudService = AppInjector.get(CrudService);
 
   date = "";
@@ -45,6 +49,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   override ngOnInit(): void {
     super.ngOnInit();
     this.getEvent();
+    // this.getTotalGuests();
   }
 
   formatCoin(coin: number): string {
@@ -133,6 +138,28 @@ export class DashboardComponent extends BaseComponent implements OnInit {
         this.resultCountdown = parts.join(", ");
       });
     }
+  }
+
+  getTotalGuests() {
+    this.loading = true;
+    let currentFilter = { event_id: "" };
+    currentFilter.event_id = this.service.getUser().event;
+    this.service
+      .search("guests-by-event", {}, currentFilter as any)
+      .subscribe((result: any) => {
+        this.guests = result;
+        this.totalGuests = result.length;
+        result.forEach((guest: any) => {
+          try {
+            guest.dependents = Number(guest.dependents);
+          } catch (e) {
+            console.log(e);
+            guest.dependents = 0;
+          }
+          this.totalGuests += Number(guest.dependents);
+        });
+        console.log("this.totalGuests", this.totalGuests);
+      });
   }
 
   getServiceURL(): string {

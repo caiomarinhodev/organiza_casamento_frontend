@@ -139,5 +139,6 @@
   "NO": "No",
   "VIEW_GUEST": "View Guest",
   "UPDATE_GUEST": "Update Guest",
-  "DELETE_GUEST": "Delete Guest"
+  "DELETE_GUEST": "Delete Guest",
+  "UPDATE_PROFILE": "Update Profile"
 }

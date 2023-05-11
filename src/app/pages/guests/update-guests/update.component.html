@@ -1,14 +1,14 @@
 <div class="container-fluid">
   <div class="row" style="margin-top: 24px">
     <div class="col-sm-12">
-      <h1 translate>ADD_GUEST</h1>
+      <h1 translate>UPDATE_GUEST</h1>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <mat-card>
         <mat-card-content>
-          <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="name" translate>NAME</label>
               <input
@@ -59,7 +59,10 @@
                 />
               </div>
             </div>
-            <div class="form-group" *ngIf="this.createForm.controls['has_dependents'].value === true">
+            <div
+              class="form-group"
+              *ngIf="this.editForm.controls['has_dependents'].value === true"
+            >
               <label for="dependents" translate>DEPENDENTS</label>
               <input
                 type="number"
@@ -87,7 +90,7 @@
                     type="submit"
                     translate
                   >
-                    SAVE_BUTTON
+                    UPDATE_BUTTON
                   </button>
                 </div>
               </div>

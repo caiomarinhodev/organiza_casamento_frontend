@@ -49,10 +49,10 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
     return [
       "id",
       "name",
-      "email",
+      // "email",
       "confirmed",
-      "phone",
-      "has_dependents",
+      // "phone",
+      // "has_dependents",
       "dependents",
       "actions"
     ];

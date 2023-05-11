@@ -9,7 +9,7 @@
 <!-- Content Row -->
 <div class="row">
   <div class="col-12 col-sm-6 col-md-3 mb-4">
-    <app-card
+    <app-card *ngIf="event"
       [title]="translate.instant('CARD_TITLE_TOTAL_GUESTS')"
       [value]="event.guests"
       [icon]="'fas fa-users'"
@@ -25,7 +25,7 @@
     ></app-card>
   </div>
   <div class="col-12 col-sm-6 col-md-3 mb-4">
-    <app-card
+    <app-card *ngIf="event"
       [title]="translate.instant('CARD_TITLE_TOTAL_BUDGET')"
       [value]="formatCoin(event.budget)"
       [icon]="'fas fa-dollar-sign'"
@@ -33,7 +33,7 @@
     ></app-card>
   </div>
   <div class="col-12 col-sm-6 col-md-3 mb-4">
-    <app-card
+    <app-card *ngIf="event"
       [title]="translate.instant('CARD_DATE')"
       [value]="resultCountdown"
       [icon]="'fas fa-calendar'"

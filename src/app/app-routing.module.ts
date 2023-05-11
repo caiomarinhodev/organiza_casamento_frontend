@@ -15,6 +15,9 @@ import { EventComponent } from "./pages/event/event.component";
 import { ListGuestsComponent } from "./pages/guests/list-guests/list-guests.component";
 import { AddGuestComponent } from "./pages/guests/add-guests/add.component";
 import { DetailGuestComponent } from "./pages/guests/detail-guests/detail.component";
+import { UpdateGuestComponent } from "./pages/guests/update-guests/update.component";
+import { DeleteGuestComponent } from "./pages/guests/delete-guests/delete.component";
+import { UpdateProfileComponent } from "./pages/update-profile/update.component";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, data: { title: "" } },
@@ -44,6 +47,11 @@ const routes: Routes = [
         data: {},
         component: EventComponent,
       },
+      {
+        path: "profile/:id",
+        data: {},
+        component: UpdateProfileComponent,
+      },
     ],
   },
   {
@@ -52,9 +60,14 @@ const routes: Routes = [
     data: { title: "" },
     children: [
       {
-        path: "",
+        path: "edit/:id",
         data: {},
-        component: ListGuestsComponent,
+        component: UpdateGuestComponent,
+      },
+      {
+        path: "delete/:id",
+        data: {},
+        component: DeleteGuestComponent,
       },
       {
         path: "create",
@@ -65,6 +78,11 @@ const routes: Routes = [
         path: ":id",
         data: {},
         component: DetailGuestComponent,
+      },
+      {
+        path: "",
+        data: {},
+        component: ListGuestsComponent,
       },
     ],
   },

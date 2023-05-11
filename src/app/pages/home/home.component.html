@@ -81,7 +81,7 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a class="nav-link">
+        <a class="nav-link" routerLink="/profile/{{ this.user.data_user.id }}">
           <i class="fas fa-fw fa-user-circle"></i>
           <span translate>PROFILE</span></a
         >
