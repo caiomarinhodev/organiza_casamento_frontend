@@ -18,6 +18,9 @@ import { DetailGuestComponent } from "./pages/guests/detail-guests/detail.compon
 import { UpdateGuestComponent } from "./pages/guests/update-guests/update.component";
 import { DeleteGuestComponent } from "./pages/guests/delete-guests/delete.component";
 import { UpdateProfileComponent } from "./pages/update-profile/update.component";
+import { ListArtifactsComponent } from "./pages/artifacts/list/list.component";
+import { AddArtifactComponent } from "./pages/artifacts/add/add.component";
+import { DeleteArtifactComponent } from "./pages/artifacts/delete/delete.component";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, data: { title: "" } },
@@ -86,7 +89,28 @@ const routes: Routes = [
       },
     ],
   },
-
+  {
+    path: "artifacts",
+    component: HomePageComponent,
+    data: { title: "" },
+    children: [
+      {
+        path: "delete/:id",
+        data: {},
+        component: DeleteArtifactComponent,
+      },
+      {
+        path: "create",
+        data: {},
+        component: AddArtifactComponent,
+      },
+      {
+        path: "",
+        data: {},
+        component: ListArtifactsComponent,
+      },
+    ],
+  },
   {
     path: "item",
     component: HomePageComponent,

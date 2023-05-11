@@ -7,15 +7,40 @@ import { UserService } from "../../service/user/user.service";
 
 type DataUserProps = {
   id: number;
+  birthdate: string;
+  cpf: string;
+  custom_user: number;
+  phone: string;
+};
+
+type ProfileDataProps = {
+  id: number;
+  address: string;
+  cep: string;
+  city: string;
+  number: string;
+  state: string;
+  district: string;
+  photo: string;
+  type: string;
+  user: number;
+};
+
+type UserDjangoProps = {
+  id: number;
+  username: string;
+  first_name: string;
+  last_name: string;
+  email: string;
 };
 
 type UserProps = {
   data_user: DataUserProps;
   event: number;
-  profile_data: object;
+  profile_data: ProfileDataProps;
   token: string;
   type: string;
-  user: object;
+  user: UserDjangoProps;
 };
 
 @Component({
@@ -33,12 +58,29 @@ export class HomePageComponent {
   logged = false;
 
   user: UserProps = {
-    data_user: { id: 0 },
+    data_user: { id: 0, birthdate: "", cpf: "", custom_user: 0, phone: "" },
     event: 0,
-    profile_data: {},
+    profile_data: {
+      id: 0,
+      address: "",
+      cep: "",
+      city: "",
+      number: "",
+      state: "",
+      district: "",
+      photo: "",
+      type: "",
+      user: 0,
+    },
     token: "",
     type: "",
-    user: {},
+    user: {
+      first_name: "",
+      last_name: "",
+      email: "",
+      id: 0,
+      username: "",
+    },
   };
 
   constructor(
@@ -68,6 +110,10 @@ export class HomePageComponent {
     this.translate.addLangs(["en", "es", "pt"]);
     this.translate.setDefaultLang("pt");
     this.translate.use(browserLang.match(/en|es|pt/) ? browserLang : "en");
+  }
+
+  capitalizeFirstLetter(string: string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   back() {

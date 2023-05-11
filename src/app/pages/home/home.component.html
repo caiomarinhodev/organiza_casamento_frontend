@@ -70,7 +70,7 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a class="nav-link">
+        <a class="nav-link" routerLink="/artifacts/">
           <i class="fas fa-fw fa-mail-bulk"></i>
           <span translate>ARTEFACTS</span></a
         >
@@ -357,7 +357,8 @@
                 aria-expanded="false"
               >
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                  >Douglas McGee</span
+                  >{{ capitalizeFirstLetter(this.user.user.first_name) }}
+                  {{ capitalizeFirstLetter(this.user.user.last_name) }}</span
                 >
                 <img
                   class="img-profile rounded-circle"
@@ -369,9 +370,9 @@
                 class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="userDropdown"
               >
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="#" translate>
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  PROFILE
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -386,8 +387,6 @@
                   id="logout_link"
                   class="dropdown-item"
                   href="#"
-                  data-toggle="modal"
-                  data-target="#logoutModal"
                   (click)="logout()"
                   translate
                 >

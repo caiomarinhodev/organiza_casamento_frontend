@@ -39,6 +39,9 @@ import { DetailGuestModule } from "./pages/guests/detail-guests/detail.module";
 import { UpdateGuestModule } from "./pages/guests/update-guests/update.module";
 import { DeleteGuestModule } from "./pages/guests/delete-guests/delete.module";
 import { UpdateProfileModule } from "./pages/update-profile/update.module";
+import { ListArtifactsModule } from "./pages/artifacts/list/list.module";
+import { AddArtifactModule } from "./pages/artifacts/add/add.module";
+import { DeleteArtifactModule } from "./pages/artifacts/delete/delete.module";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -84,7 +87,10 @@ export function createTranslateLoader(http: HttpClient) {
     DetailGuestModule,
     UpdateGuestModule,
     DeleteGuestModule,
-    UpdateProfileModule
+    UpdateProfileModule,
+    ListArtifactsModule,
+    AddArtifactModule,
+    DeleteArtifactModule
   ],
   providers: [
     AppTranslateService,

@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { AppInjector } from 'src/app/app.injector';
-import { SERVER_URL } from 'src/app/shared/url/url.domain';
-import { AppTranslateService } from '../service/translate.service';
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { AppInjector } from "src/app/app.injector";
+import { SERVER_URL } from "src/app/shared/url/url.domain";
+import { AppTranslateService } from "../service/translate.service";
 
 /**
  * The 'BaseService' class provides the common API for all services.
@@ -11,20 +11,19 @@ import { AppTranslateService } from '../service/translate.service';
  * All services MUST extend this class.
  */
 export abstract class BaseService {
-
   /**
    * Client for the HTTP operations.
    *
    * @type {HttpClient}
    */
   protected http: HttpClient = AppInjector.get(HttpClient);
-  protected translateService: AppTranslateService = AppInjector.get(AppTranslateService);
+  protected translateService: AppTranslateService =
+    AppInjector.get(AppTranslateService);
 
   /**
    * Constructor.
    */
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * HTTP Method GET.
@@ -34,7 +33,10 @@ export abstract class BaseService {
    * @returns {Observable<Object>}
    */
   get(url: string, params: HttpParams) {
-    return this.http.get(SERVER_URL + url, { headers: this.getHeaders(), params: params });
+    return this.http.get(SERVER_URL + url, {
+      headers: this.getHeaders(),
+      params: params,
+    });
   }
 
   /**
@@ -45,7 +47,16 @@ export abstract class BaseService {
    * @returns {Observable<Object>}
    */
   post(url: string, body = {}) {
-    return this.http.post(SERVER_URL + url, body, { headers: this.getHeaders() });
+    return this.http.post(SERVER_URL + url, body, {
+      headers: this.getHeaders(),
+    });
+  }
+
+  postCustom(url: string, body = {}) {
+    let headers = this.getHeaders();
+    return this.http.post<any>(SERVER_URL + url, body, {
+      headers: headers,
+    });
   }
 
   /**
@@ -56,7 +67,9 @@ export abstract class BaseService {
    * @returns {Observable<Object>}
    */
   put(url: string, body = {}) {
-    return this.http.put(SERVER_URL + url, body, { headers: this.getHeaders() });
+    return this.http.put(SERVER_URL + url, body, {
+      headers: this.getHeaders(),
+    });
   }
 
   /**
@@ -67,7 +80,9 @@ export abstract class BaseService {
    * @returns {Observable<Object>}
    */
   patch(url: string, body = {}) {
-    return this.http.patch(SERVER_URL + url, body, { headers: this.getHeaders() });
+    return this.http.patch(SERVER_URL + url, body, {
+      headers: this.getHeaders(),
+    });
   }
 
   /**
@@ -89,17 +104,22 @@ export abstract class BaseService {
     let httpHeaders: HttpHeaders;
     const userOnStorage = this.getUser();
     if (userOnStorage) {
-      httpHeaders = new HttpHeaders().set('Accept-Language', this.translateService.getLang()).set('Authorization', 'Token ' + userOnStorage['token']);
+      httpHeaders = new HttpHeaders()
+        .set("Accept", "*/*")
+        .set("Accept-Language", this.translateService.getLang())
+        .set("Authorization", "Token " + userOnStorage["token"]);
     } else {
-      httpHeaders = new HttpHeaders().set('Accept-Language', this.translateService.getLang());
+      httpHeaders = new HttpHeaders().set(
+        "Accept-Language",
+        this.translateService.getLang()
+      );
     }
 
     return httpHeaders;
   }
 
-
   getUser() {
-    const userOnStorage = localStorage.getItem('user');
+    const userOnStorage = localStorage.getItem("user");
     if (userOnStorage) {
       return JSON.parse(userOnStorage);
     }
