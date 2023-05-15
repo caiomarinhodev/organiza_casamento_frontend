@@ -1,6 +1,8 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
+import { AppInjector } from "src/app/app.injector";
 import { BaseEditComponent } from "src/app/core/interface/base-edit.component";
 
 @Component({
@@ -12,6 +14,8 @@ export class UpdateProfileComponent
   extends BaseEditComponent
   implements OnInit
 {
+  protected http: HttpClient = AppInjector.get(HttpClient);
+
   constructor(private route: ActivatedRoute) {
     super();
   }
@@ -90,6 +94,26 @@ export class UpdateProfileComponent
       cpf: this.editForm.controls["cpf"].value,
       birthdate: this.editForm.controls["birthdate"].value,
     };
+  }
+
+  buscarCEP() {
+    this.loading = true;
+    let cep = this.editForm.controls["cep"].value;
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+    this.http.get(url).subscribe((data: any) => {
+      if (data.erro) {
+        this.notification.error("CEP não encontrado");
+        this.loading = false;
+        return;
+      } else {
+        this.notification.successText("CEP encontrado");
+        this.editForm.controls["address"].setValue(data.logradouro);
+        this.editForm.controls["district"].setValue(data.bairro);
+        this.editForm.controls["city"].setValue(data.localidade);
+        this.editForm.controls["state"].setValue(data.uf);
+        this.loading = false;
+      }
+    });
   }
 
   protected override update(): void {

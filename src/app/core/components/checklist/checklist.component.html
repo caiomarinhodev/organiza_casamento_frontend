@@ -4,13 +4,13 @@
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <mat-list-item *ngFor="let activity of activities">
-        <mat-checkbox (change)="markCompleted(activity)">
+      <mat-list-item *ngFor="let task of tasks">
+        <mat-checkbox (change)="markCompleted(task)" [checked]="task.is_completed">
           <span
             [ngStyle]="{
-              'text-decoration': activity.completed ? 'line-through' : 'none'
+              'text-decoration': task.is_completed ? 'line-through' : 'none'
             }"
-            >{{ activity.name }}</span
+            >{{ task.title }}</span
           >
         </mat-checkbox>
       </mat-list-item>

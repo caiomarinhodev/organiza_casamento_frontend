@@ -11,7 +11,6 @@ export const API_VERSION = 'v1';
  */
 export const SERVER_URL = 'http://localhost:8000/api/';
 // export const SERVER_URL = 'https://organizacasamento.onrender.com/api/';
-// export const SERVER_URL = 'https://jsonplaceholder.typicode.com/';
 
 /**
  * URLs for Login.

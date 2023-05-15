@@ -78,6 +78,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
     );
   }
 
+
   countdownTimer() {
     if (this.date && this.date.length > 0) {
       const target = new Date(this.date);
