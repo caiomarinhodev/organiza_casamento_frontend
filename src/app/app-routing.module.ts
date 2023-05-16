@@ -21,10 +21,18 @@ import { UpdateProfileComponent } from "./pages/update-profile/update.component"
 import { ListArtifactsComponent } from "./pages/artifacts/list/list.component";
 import { AddArtifactComponent } from "./pages/artifacts/add/add.component";
 import { DeleteArtifactComponent } from "./pages/artifacts/delete/delete.component";
+import { FormRSVPComponent } from "./pages/guests/rsvp/rsvp-form.component";
+import { ManualAccessGuard } from "./guards/manual-access.guard";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, data: { title: "" } },
   { path: "register", component: RegisterPageComponent, data: { title: "" } },
+  {
+    path: "rsvp",
+    data: { title: "", manualAccess: true },
+    component: FormRSVPComponent,
+    canActivate: [ManualAccessGuard],
+  },
   {
     path: "reset-password",
     component: ResetPassComponent,

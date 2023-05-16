@@ -5,15 +5,16 @@ import { TranslateModule } from "@ngx-translate/core";
 
 import { NgxLoadingModule } from "ngx-loading";
 
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { ControlMessageModule } from "src/app/core/components/control-message/control-message.module";
 import { ToolbarModule } from "src/app/core/components/toolbar/toolbar.module";
-import { UserService } from "src/app/service/user/user.service";
 import { AngularMaterialModule } from "src/app/shared/interface/angular-material.module";
-import { ListGuestsComponent } from "./list-guests.component";
+import { FormRSVPComponent } from "./rsvp-form.component";
 import { CommonService } from "src/app/service/common/common.service";
 
 @NgModule({
-  declarations: [ListGuestsComponent],
+  declarations: [FormRSVPComponent],
   imports: [
     CommonModule,
     TranslateModule,
@@ -24,10 +25,13 @@ import { CommonService } from "src/app/service/common/common.service";
       secondaryColour: "#0082f0",
       tertiaryColour: "#0082f0",
     }),
+    FormsModule,
+    ReactiveFormsModule,
+    ControlMessageModule,
     RouterModule,
     ToolbarModule,
     AngularMaterialModule,
   ],
-  providers: [UserService, CommonService],
+  providers: [CommonService],
 })
-export class ListGuestsModule {}
+export class RSVPFormModule {}

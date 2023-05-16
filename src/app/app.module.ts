@@ -42,6 +42,8 @@ import { UpdateProfileModule } from "./pages/update-profile/update.module";
 import { ListArtifactsModule } from "./pages/artifacts/list/list.module";
 import { AddArtifactModule } from "./pages/artifacts/add/add.module";
 import { DeleteArtifactModule } from "./pages/artifacts/delete/delete.module";
+import { RSVPFormModule } from "./pages/guests/rsvp/rsvp-form.module";
+import { CommonService } from "./service/common/common.service";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -90,7 +92,8 @@ export function createTranslateLoader(http: HttpClient) {
     UpdateProfileModule,
     ListArtifactsModule,
     AddArtifactModule,
-    DeleteArtifactModule
+    DeleteArtifactModule,
+    RSVPFormModule,
   ],
   providers: [
     AppTranslateService,
@@ -98,6 +101,7 @@ export function createTranslateLoader(http: HttpClient) {
     NotificationModule,
     SearchService,
     CrudService,
+    CommonService,
   ],
   bootstrap: [AppComponent],
 })

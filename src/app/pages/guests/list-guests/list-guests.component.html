@@ -87,7 +87,7 @@
               </th>
               <td mat-cell *matCellDef="let row">
                 <div class="row">
-                  <div class="col-6">
+                  <div class="col-4">
                     <button
                       matTooltip="{{ 'UPDATE_ITEM' | translate }}"
                       class="btn btn-primary btn-sm"
@@ -96,13 +96,22 @@
                       <i class="fa fa-pen"></i>
                     </button>
                   </div>
-                  <div class="col-6">
+                  <div class="col-4">
                     <button
                       matTooltip="{{ 'REMOVE_ITEM_TITLE' | translate }}"
                       class="btn btn-danger btn-sm"
                       (click)="delete(row.id)"
                     >
                       <i class="fa fa-trash"></i>
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <button
+                      matTooltip="{{ 'SEND_RSVP' | translate }}"
+                      class="btn btn-info btn-sm"
+                      (click)="generateRSVP(row.id)"
+                    >
+                      <i class="fab fa-telegram-plane"></i>
                     </button>
                   </div>
                 </div>

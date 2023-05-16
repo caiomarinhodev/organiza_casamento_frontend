@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <div class="row" style="margin-top: 24px">
+    <div class="col-sm-12">
+      <h1 translate>RSVP</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <mat-card>
+        <mat-card-content>
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name" translate>NAME</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                formControlName="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone" translate>PHONE</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                formControlName="phone"
+              />
+            </div>
+            <div class="row col-12 form-group">
+              <div class="">
+                <label for="confirmed" translate>CONFIRMED</label>
+                <input
+                  type="checkbox"
+                  class="form-control"
+                  id="confirmed"
+                  formControlName="confirmed"
+                />
+              </div>
+            </div>
+            <div class="row col-12 form-group">
+              <div class="">
+                <label for="has_dependents" translate>HAS_DEPENDENTS</label>
+                <input
+                  type="checkbox"
+                  class="form-control"
+                  id="has_dependents"
+                  (change)="this.updateDependents($event)"
+                  formControlName="has_dependents"
+                />
+              </div>
+            </div>
+            <div
+              class="form-group"
+              *ngIf="this.editForm.controls['has_dependents'].value === true"
+            >
+              <label for="dependents" translate>DEPENDENTS</label>
+              <input
+                type="number"
+                class="form-control"
+                id="dependents"
+                formControlName="dependents"
+              />
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-6">
+                  <button
+                    class="btn btn-primary btn-block"
+                    type="submit"
+                    translate
+                  >
+                    SEND
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<ngx-loading
+  [show]="loading"
+  [config]="{
+    backdropBorderRadius: '3px',
+    backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+    primaryColour: '#ffffff',
+    secondaryColour: '#ffffff',
+    tertiaryColour: '#ffffff'
+  }"
+></ngx-loading>

@@ -5,6 +5,7 @@ import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { TranslateService } from "@ngx-translate/core";
 import { BaseListComponent } from "src/app/core/interface/base-list.component";
+import { CommonService } from "src/app/service/common/common.service";
 
 @Component({
   selector: "app-list-guests",
@@ -29,7 +30,8 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private viewRef: ViewContainerRef,
-    public override dialog: MatDialog
+    public override dialog: MatDialog,
+    private commonService: CommonService
   ) {
     super(dialog);
   }
@@ -54,7 +56,7 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
       // "phone",
       // "has_dependents",
       "dependents",
-      "actions"
+      "actions",
     ];
   }
 
@@ -85,6 +87,12 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  generateRSVP(id: any) {
+    console.log("generateRSVP", id);
+    let hash = encodeURIComponent(this.commonService.generateHash(String(id)));
+    console.log("generateRSVP", "/rsvp?hash=" + hash);
   }
 
   getServiceURL(): string {
