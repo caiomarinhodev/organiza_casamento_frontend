@@ -139,5 +139,16 @@
   "VIEW_GUEST": "Ver invitado",
   "UPDATE_GUEST": "Actualizar invitado",
   "DELETE_GUEST": "Eliminar invitado",
-  "UPDATE_PROFILE": "Actualizar perfil"
+  "UPDATE_PROFILE": "Actualizar perfil",
+  "GENERATE_REPORT": "Generar informe",
+  "LIST_ARTIFACT": "Lista de artefactos",
+  "ADD_ARTIFACT": "Agregar artefacto",
+  "DESCRIPTION": "Descripción",
+  "FILE": "Archivo",
+  "DELETE_ARTIFACT": "Eliminar artefacto",
+  "CHECKLIST_WEDDING": "Lista de verificación de la boda",
+  "CHOOSE_REPORT": "Elija el tipo de informe que desea generar.",
+  "MODAL_REPORT_DESCRIPTION": "El informe se generará en formato PDF y se enviará a su correo electrónico.",
+  "DOWNLOAD_CSV": "Descargar Data CSV",
+  "DOWNLOAD_PDF": "Descargar Invitados PDF"
 }

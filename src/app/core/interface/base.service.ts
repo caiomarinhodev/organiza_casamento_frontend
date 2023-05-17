@@ -100,7 +100,7 @@ export abstract class BaseService {
    *
    * @returns {HttpHeaders}
    */
-  protected getHeaders() {
+  public getHeaders() {
     let httpHeaders: HttpHeaders;
     const userOnStorage = this.getUser();
     if (userOnStorage) {

@@ -15,6 +15,8 @@ import HC_exporting from "highcharts/modules/exporting";
 import { TranslateService } from "@ngx-translate/core";
 import { CrudService } from "src/app/core/service/crud.service";
 import { AppInjector } from "src/app/app.injector";
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { SERVER_URL } from "src/app/shared/url/url.domain";
 HC_exporting(Highcharts);
 
 @Component({
@@ -34,6 +36,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   totalGuests = 0;
 
   protected service: CrudService = AppInjector.get(CrudService);
+  protected http: HttpClient = AppInjector.get(HttpClient);
 
   date = "";
   resultCountdown = "";
@@ -77,7 +80,6 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       }
     );
   }
-
 
   countdownTimer() {
     if (this.date && this.date.length > 0) {
@@ -161,6 +163,52 @@ export class DashboardComponent extends BaseComponent implements OnInit {
         });
         console.log("this.totalGuests", this.totalGuests);
       });
+  }
+
+  getEventReportCSV() {
+    this.loading = true;
+    this.http
+      .get(SERVER_URL + "event/" + String(this.user.event) + "/report/csv/", {
+        headers: this.service.getHeaders(),
+        params: new HttpParams(),
+        responseType: "blob",
+      })
+      .subscribe(
+        (result: any) => {
+          this.loading = false;
+          const downloadLink = document.createElement("a");
+          downloadLink.href = URL.createObjectURL(result);
+          downloadLink.download = "arquivo.xlsx";
+          downloadLink.click();
+        },
+        (error: string) => {
+          this.loading = false;
+          this.notification.error(error);
+        }
+      );
+  }
+
+  getEventReportPDF() {
+    this.loading = true;
+    this.http
+      .get(SERVER_URL + "event/" + String(this.user.event) + "/report/pdf/", {
+        headers: this.service.getHeaders(),
+        params: new HttpParams(),
+        responseType: "blob",
+      })
+      .subscribe(
+        (result: any) => {
+          this.loading = false;
+          const downloadLink = document.createElement("a");
+          downloadLink.href = URL.createObjectURL(result);
+          downloadLink.download = "arquivo.pdf";
+          downloadLink.click();
+        },
+        (error: string) => {
+          this.loading = false;
+          this.notification.error(error);
+        }
+      );
   }
 
   getServiceURL(): string {

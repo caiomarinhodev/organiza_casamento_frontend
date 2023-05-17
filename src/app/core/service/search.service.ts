@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-import { HttpParams } from '@angular/common/http';
-import { BaseService } from '../interface/base.service';
+import { HttpParams } from "@angular/common/http";
+import { BaseService } from "../interface/base.service";
 
 /**
  * The 'SearchService' class provides the common API and operations to
@@ -11,7 +11,6 @@ import { BaseService } from '../interface/base.service';
  */
 @Injectable()
 export class SearchService extends BaseService {
-
   /**
    * Constructor.
    */
@@ -36,9 +35,12 @@ export class SearchService extends BaseService {
    * @returns {Observable<Object>}
    */
   search(url: string, pagination = {}, filters = []): any {
-    const params = new HttpParams().set('filter', JSON.stringify(Object.assign(pagination, { filters: filters })));
+    const params = new HttpParams().set(
+      "filter",
+      JSON.stringify(Object.assign(pagination, { filters: filters }))
+    );
 
-    return this.get(url + '/', params);
+    return this.get(url + "/", params);
   }
 
   /**
@@ -49,12 +51,14 @@ export class SearchService extends BaseService {
    * @returns {Observable<Object>}
    */
   getOne(url: string, id: string) {
-    return this.get(url + '/' + id + '/', new HttpParams());
+    return this.get(url + "/" + id + "/", new HttpParams());
   }
 
   getURL(url: string) {
-    return this.get(url + '/', new HttpParams());
+    return this.get(url + "/", new HttpParams());
   }
 
-
+  getCustom(url: string, params: HttpParams) {
+    return this.get(url + "/", params);
+  }
 }

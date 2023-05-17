@@ -140,5 +140,16 @@
   "VIEW_GUEST": "Visualizar Convidado",
   "UPDATE_GUEST": "Atualizar Convidado",
   "DELETE_GUEST": "Remover Convidado",
-  "UPDATE_PROFILE": "Atualizar Perfil"
+  "UPDATE_PROFILE": "Atualizar Perfil",
+  "GENERATE_REPORT": "Gerar Relatório",
+  "LIST_ARTIFACT": "Lista de Artefatos",
+  "ADD_ARTIFACT": "Adicionar Artefato",
+  "DESCRIPTION": "Descrição",
+  "FILE": "Arquivo",
+  "DELETE_ARTIFACT": "Remover Artefato",
+  "CHECKLIST_WEDDING": "Checklist do Casamento",
+  "CHOOSE_REPORT": "Escolha o tipo de relatório que deseja gerar.",
+  "MODAL_REPORT_DESCRIPTION": "O relatório será gerado com base nos dados do seu evento.",
+  "DOWNLOAD_CSV": "Download Dados CSV",
+  "DOWNLOAD_PDF": "Download Convidados PDF"
 }

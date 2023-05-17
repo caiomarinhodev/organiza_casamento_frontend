@@ -140,5 +140,16 @@
   "VIEW_GUEST": "View Guest",
   "UPDATE_GUEST": "Update Guest",
   "DELETE_GUEST": "Delete Guest",
-  "UPDATE_PROFILE": "Update Profile"
+  "UPDATE_PROFILE": "Update Profile",
+  "GENERATE_REPORT": "Generate Report",
+  "LIST_ARTIFACT": "List Artefacts",
+  "ADD_ARTIFACT": "Add Artefact",
+  "DESCRIPTION": "Description",
+  "FILE": "File",
+  "DELETE_ARTIFACT": "Delete Artefact",
+  "CHECKLIST_WEDDING": "Checklist Wedding",
+  "CHOOSE_REPORT": "Choose type of report",
+  "MODAL_REPORT_DESCRIPTION": "Choose the type of report you want to generate.",
+  "DOWNLOAD_CSV": "Download Data CSV",
+  "DOWNLOAD_PDF": "Download Guests PDF"
 }

@@ -1,15 +1,22 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800" translate>DASHBOARD</h1>
-  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-    ><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a
+  <button
+    type="button"
+    data-toggle="modal"
+    data-target="#modalReport"
+    class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+    translate
   >
+    <i class="fas fa-download fa-sm text-white-50"></i> GENERATE_REPORT
+  </button>
 </div>
 
 <!-- Content Row -->
 <div class="row">
   <div class="col-12 col-sm-6 col-md-3 mb-4">
-    <app-card *ngIf="event"
+    <app-card
+      *ngIf="event"
       [title]="translate.instant('CARD_TITLE_TOTAL_GUESTS')"
       [value]="event.guests"
       [icon]="'fas fa-users'"
@@ -25,7 +32,8 @@
     ></app-card>
   </div>
   <div class="col-12 col-sm-6 col-md-3 mb-4">
-    <app-card *ngIf="event"
+    <app-card
+      *ngIf="event"
       [title]="translate.instant('CARD_TITLE_TOTAL_BUDGET')"
       [value]="formatCoin(event.budget)"
       [icon]="'fas fa-dollar-sign'"
@@ -33,7 +41,8 @@
     ></app-card>
   </div>
   <div class="col-12 col-sm-6 col-md-3 mb-4">
-    <app-card *ngIf="event"
+    <app-card
+      *ngIf="event"
       [title]="translate.instant('CARD_DATE')"
       [value]="resultCountdown"
       [icon]="'fas fa-calendar'"
@@ -53,6 +62,53 @@
     <mat-calendar></mat-calendar>
   </div>
 </div>
+
+<div
+  class="modal fade"
+  id="modalReport"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" translate>
+          CHOOSE_REPORT
+        </h5>
+        <button
+          class="close"
+          type="button"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" translate>MODAL_REPORT_DESCRIPTION</div>
+      <div class="modal-footer">
+        <button
+          class="btn btn-secondary"
+          type="button"
+          (click)="getEventReportCSV()"
+          translate
+        >
+          DOWNLOAD_CSV
+        </button>
+        <button
+          class="btn btn-secondary"
+          type="button"
+          (click)="getEventReportPDF()"
+          translate
+        >
+          DOWNLOAD_PDF
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <ngx-loading
   [show]="loading"
   [config]="{
