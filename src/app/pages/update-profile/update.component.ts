@@ -121,12 +121,12 @@ export class UpdateProfileComponent
       .update(this.getServiceURL(), this.item.id, this.getCorrectFormValue())
       .subscribe(
         (result) => {
-          console.log(result);
+          console.log("[update-profile] ", result);
           this.submitting = false;
           this.handleUpdate(result);
         },
         (error) => {
-          console.log(error);
+          console.log("[update-profile] ", error);
           this.submitting = false;
           this.notification.error(
             error.error ? error.error.message : error.message

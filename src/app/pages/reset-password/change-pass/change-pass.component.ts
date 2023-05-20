@@ -49,7 +49,7 @@ export class ChangePassComponent extends BaseComponent implements OnInit {
   override ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.token = params["token"];
-      console.log(params);
+      console.log('[change-password]', params);
     });
   }
 

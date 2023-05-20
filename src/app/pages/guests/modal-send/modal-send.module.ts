@@ -7,14 +7,14 @@ import { NgxLoadingModule } from "ngx-loading";
 
 import { RouterModule } from "@angular/router";
 import { ToolbarModule } from "src/app/core/components/toolbar/toolbar.module";
+import { CommonService } from "src/app/service/common/common.service";
 import { UserService } from "src/app/service/user/user.service";
 import { AngularMaterialModule } from "src/app/shared/interface/angular-material.module";
-import { ListGuestsComponent } from "./list-guests.component";
-import { CommonService } from "src/app/service/common/common.service";
-import { ModalSendModule } from "../modal-send/modal-send.module";
+import { ModalSendComponent } from "./modal-send.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [ListGuestsComponent],
+  declarations: [ModalSendComponent],
   imports: [
     CommonModule,
     TranslateModule,
@@ -28,8 +28,9 @@ import { ModalSendModule } from "../modal-send/modal-send.module";
     RouterModule,
     ToolbarModule,
     AngularMaterialModule,
-    ModalSendModule,
+    FormsModule
   ],
+  exports: [ModalSendComponent],
   providers: [UserService, CommonService],
 })
-export class ListGuestsModule {}
+export class ModalSendModule {}

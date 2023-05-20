@@ -150,5 +150,8 @@
   "CHOOSE_REPORT": "Elija el tipo de informe que desea generar.",
   "MODAL_REPORT_DESCRIPTION": "El informe se generará en formato PDF y se enviará a su correo electrónico.",
   "DOWNLOAD_CSV": "Descargar Data CSV",
-  "DOWNLOAD_PDF": "Descargar Invitados PDF"
+  "DOWNLOAD_PDF": "Descargar Invitados PDF",
+  "SEND_INVITE": "Enviar invitación",
+  "SEND_INVITE_DESCRIPTION": "Se enviará un correo electrónico a los invitados seleccionados.",
+  "SEND": "Enviar"
 }

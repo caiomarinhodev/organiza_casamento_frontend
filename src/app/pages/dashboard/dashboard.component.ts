@@ -84,7 +84,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   countdownTimer() {
     if (this.date && this.date.length > 0) {
       const target = new Date(this.date);
-      console.log("target", target);
+      console.log("[dashboard] counter target", target);
       interval(1000).subscribe(() => {
         const now = new Date();
         const diff = target.getTime() - now.getTime();
@@ -161,7 +161,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
           }
           this.totalGuests += Number(guest.dependents);
         });
-        console.log("this.totalGuests", this.totalGuests);
+        console.log("[dashboard] this.totalGuests", this.totalGuests);
       });
   }
 

@@ -55,7 +55,7 @@ export class EventComponent extends BaseEditComponent implements OnInit {
   }
 
   protected override postGetItem(): void {
-    console.log("Evento", this.item);
+    console.log("[event] Evento", this.item);
     delete this.item.created_at;
     delete this.item.groom;
     delete this.item.bride;

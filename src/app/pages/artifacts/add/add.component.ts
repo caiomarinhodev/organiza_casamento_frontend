@@ -41,7 +41,7 @@ export class AddArtifactComponent
       formData.append("description", this.createForm.value.description);
       formData.append("event", this.createForm.value.event);
       formData.append("owner", this.createForm.value.owner);
-      console.log(formData);
+      console.log('[addArtifact]', formData);
       return formData;
     }
     return {};

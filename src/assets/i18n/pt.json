@@ -151,5 +151,8 @@
   "CHOOSE_REPORT": "Escolha o tipo de relatório que deseja gerar.",
   "MODAL_REPORT_DESCRIPTION": "O relatório será gerado com base nos dados do seu evento.",
   "DOWNLOAD_CSV": "Download Dados CSV",
-  "DOWNLOAD_PDF": "Download Convidados PDF"
+  "DOWNLOAD_PDF": "Download Convidados PDF",
+  "SEND_INVITE": "Enviar Convite",
+  "SEND_INVITE_DESCRIPTION": "Envie um convite para seus convidados.",
+  "SEND": "Enviar"
 }

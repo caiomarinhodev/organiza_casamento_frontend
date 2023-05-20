@@ -21,6 +21,8 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
   //@ts-ignore
   dataSource = new MatTableDataSource<Element>(this.source);
 
+  selectedHash = "";
+
   //@ts-ignore
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -60,6 +62,13 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
     ];
   }
 
+  addHashes(items: any) {
+    return items.map((item: any) => {
+      item.hash = this.generateRSVP(item.id);
+      return item;
+    });
+  }
+
   override listItems(): void {
     this.loading = true;
     this.currentFilter.event_id = this.service.getUser().event;
@@ -73,7 +82,9 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
         this.dataSource.data = result;
         this.displayedColumns = this.getColumns();
         this.columns = this.getColumns();
-        this.items = result;
+        let customItems = this.addHashes(result);
+        console.log("[list-guests] customItems", customItems);
+        this.items = customItems;
         this.totalPages = result.length / this.currentPageSize;
         this.postResult();
         this.loading = false;
@@ -90,9 +101,8 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
   }
 
   generateRSVP(id: any) {
-    console.log("generateRSVP", id);
     let hash = encodeURIComponent(this.commonService.generateHash(String(id)));
-    console.log("generateRSVP", "/rsvp?hash=" + hash);
+    return "/rsvp?hash=" + hash;
   }
 
   getServiceURL(): string {

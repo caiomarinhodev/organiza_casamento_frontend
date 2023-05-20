@@ -23,8 +23,7 @@
         />
       </div>
       <div style="padding: 8px">
-        <div class="mat-elevation-z8" style="width: 100%;
-        overflow-x: auto;">
+        <div class="mat-elevation-z8" style="width: 100%; overflow-x: auto">
           <table mat-table [dataSource]="dataSource" matSort>
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>
@@ -109,7 +108,10 @@
                     <button
                       matTooltip="{{ 'SEND_RSVP' | translate }}"
                       class="btn btn-info btn-sm"
-                      (click)="generateRSVP(row.id)"
+                      data-toggle="modal"
+                      data-target="#modalSend"
+                      type="button"
+                      (click)="this.selectedHash = row.hash"
                     >
                       <i class="fab fa-telegram-plane"></i>
                     </button>
@@ -142,6 +144,11 @@
     </div>
   </div>
 </div>
+
+<app-modal-send
+[url]="selectedHash"
+></app-modal-send>
+
 <ngx-loading
   [show]="loading"
   [config]="{

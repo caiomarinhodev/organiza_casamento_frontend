@@ -93,7 +93,7 @@ export class HomePageComponent {
     this.configTranslate();
     if (this.userService.isLogged()) {
       this.user = this.userService.getUser();
-      console.log(this.user);
+      console.log('[home box page] user: ', this.user);
     } else {
       this.router.navigate(["/login"]);
     }

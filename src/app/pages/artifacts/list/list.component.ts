@@ -62,7 +62,7 @@ export class ListArtifactsComponent
         this.currentFilter
       )
       .subscribe((result: any) => {
-        console.log(result);
+        console.log('[listArtifact]', result);
         this.dataSource.data = result;
         this.displayedColumns = this.getColumns();
         this.columns = this.getColumns();

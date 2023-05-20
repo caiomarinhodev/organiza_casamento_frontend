@@ -44,6 +44,7 @@ import { AddArtifactModule } from "./pages/artifacts/add/add.module";
 import { DeleteArtifactModule } from "./pages/artifacts/delete/delete.module";
 import { RSVPFormModule } from "./pages/guests/rsvp/rsvp-form.module";
 import { CommonService } from "./service/common/common.service";
+import { ModalSendModule } from "./pages/guests/modal-send/modal-send.module";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -94,6 +95,7 @@ export function createTranslateLoader(http: HttpClient) {
     AddArtifactModule,
     DeleteArtifactModule,
     RSVPFormModule,
+    ModalSendModule
   ],
   providers: [
     AppTranslateService,

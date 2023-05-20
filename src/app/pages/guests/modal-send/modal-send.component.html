@@ -1,0 +1,71 @@
+<div
+  class="modal fade"
+  id="modalSend"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" translate>
+          SEND_INVITE
+        </h5>
+        <button
+          class="close"
+          type="button"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModal()"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" translate>
+        <div translate>SEND_INVITE_DESCRIPTION</div>
+        <div class="row my-5 text-center">
+          <div class="col-sm-6">
+            <button mat-fab extended (click)="selectWhatsappMethod()" translate>
+              <i class="fab fa-whatsapp"></i>
+              Whatsapp
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <button mat-fab extended (click)="selectEmailMethod()" translate>
+              <i class="fas fa-envelope"></i>
+              Email
+            </button>
+          </div>
+        </div>
+        <div class="row" *ngIf="selectEmail">
+          <div class="col-sm-12">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Email"
+              aria-describedby="basic-addon1"
+              [(ngModel)]="email"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" *ngIf="selectWhatsapp">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Telefone"
+              aria-label="Telefone"
+              aria-describedby="basic-addon1"
+              [(ngModel)]="phone"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" [disabled]="!isValidForm()" (click)="sendInvite()" translate>SEND</button>
+      </div>
+    </div>
+  </div>
+</div>

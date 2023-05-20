@@ -27,7 +27,7 @@ export class ChecklistComponent implements OnInit {
 
   ngOnInit() {
     this.getTasks();
-    console.log("event", this.event_id);
+    console.log("[checklist] event", this.event_id);
   }
 
   markCompleted(task: any) {
@@ -72,7 +72,7 @@ export class ChecklistComponent implements OnInit {
     this.loading = true;
     this.service.getURL("event/" + this.event_id + "/tasks").subscribe(
       (result: any) => {
-        console.log("tasks", result);
+        console.log("[checklist] tasks", result);
         this.loading = false;
         this.tasks = result;
       },
