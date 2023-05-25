@@ -64,13 +64,21 @@
           <div class="form-group">
             <label for="size" translate>SIZE</label>
             <select class="form-control" id="size" formControlName="size">
-              <option value="Elopment Wedding" translate>Elopment Wedding</option>
+              <option value="Elopment Wedding" translate>
+                Elopment Wedding
+              </option>
               <option value="Mini Wedding" translate>Mini Wedding</option>
-              <option value="Casamento Pequeno" translate>Casamento Pequeno</option>
+              <option value="Casamento Pequeno" translate>
+                Casamento Pequeno
+              </option>
               <option value="Casamento Médio" translate>Casamento Médio</option>
-              <option value="Casamento Grande" translate>Casamento Grande</option>
+              <option value="Casamento Grande" translate>
+                Casamento Grande
+              </option>
               <option value="Mega Wedding" translate>Mega Wedding</option>
-              <option value="Destination Wedding" translate>Destination Wedding</option>
+              <option value="Destination Wedding" translate>
+                Destination Wedding
+              </option>
             </select>
           </div>
           <div class="form-group">
@@ -92,9 +100,15 @@
               <option value="Minimalist" translate>Minimalist</option>
               <option value="Retro" translate>Retro</option>
               <option value="Other" translate>Other</option> -->
-              <option value="Classico / Tradicional" translate>Classico / Tradicional</option>
-              <option value="Moderno / Minimalista" translate>Moderno / Minimalista</option>
-              <option value="Vintage / Rustico" translate>Vintage / Rustico</option>
+              <option value="Classico / Tradicional" translate>
+                Classico / Tradicional
+              </option>
+              <option value="Moderno / Minimalista" translate>
+                Moderno / Minimalista
+              </option>
+              <option value="Vintage / Rustico" translate>
+                Vintage / Rustico
+              </option>
               <option value="Praia / Campo" translate>Praia / Campo</option>
               <option value="Temático" translate>Temático</option>
             </select>
@@ -117,11 +131,102 @@
               formControlName="guests"
             />
           </div>
+          <div class="row my-4">
+            <div class="col-12">
+              <label translate>COLOR_PALLETE</label>
+            </div>
+            <div class="col-12  text-center">
+              <div class="row">
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col-12">
+                      <label translate>COLOR_1</label>
+                    </div>
+                    <div class="col-12">
+                      <span
+                        class="custom-circle"
+                        [style.background-color]="color1"
+                        [style.color]="color1"
+                        [cpPosition]="'bottom'"
+                        [cpPositionOffset]="'50%'"
+                        [cpPositionRelativeToArrow]="true"
+                        [(colorPicker)]="color1"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col-12">
+                      <label translate>COLOR_2</label>
+                    </div>
+                    <div class="col-12">
+                      <span
+                        class="custom-circle"
+                        [style.background-color]="color2"
+                        [style.color]="color2"
+                        [cpPosition]="'bottom'"
+                        [cpPositionOffset]="'50%'"
+                        [cpPositionRelativeToArrow]="true"
+                        [(colorPicker)]="color2"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col-12">
+                      <label translate>COLOR_3</label>
+                    </div>
+                    <div class="col-12">
+                      <span
+                        class="custom-circle"
+                        [style.background-color]="color3"
+                        [style.color]="color3"
+                        [cpPosition]="'bottom'"
+                        [cpPositionOffset]="'50%'"
+                        [cpPositionRelativeToArrow]="true"
+                        [(colorPicker)]="color3"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col-12">
+                      <label translate>COLOR_4</label>
+                    </div>
+                    <div class="col-12">
+                      <span
+                        class="custom-circle"
+                        [style.background-color]="color4"
+                        [style.color]="color4"
+                        [cpPosition]="'bottom'"
+                        [cpPositionOffset]="'50%'"
+                        [cpPositionRelativeToArrow]="true"
+                        [(colorPicker)]="color4"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="observation" translate>OBSERVATIONS</label>
+            <textarea
+              class="form-control"
+              id="observation"
+              cols="30"
+              [rows]="5"
+              formControlName="observation"
+            ></textarea>
+          </div>
           <div class="form-group">
             <div class="row">
               <div class="col-6">
                 <button
-                  class="btn btn-danger btn-block"
+                  class="btn btn-secondary btn-block"
                   type="button"
                   (click)="backToList()"
                   translate

@@ -6,18 +6,18 @@ import { webSocket } from "rxjs/webSocket";
 import { interval, of, Subscription, throwError } from "rxjs";
 import { concatMap, delay } from "rxjs/operators";
 
-import * as Highcharts from "highcharts";
 
-import HC_stock from "highcharts/modules/stock";
-HC_stock(Highcharts);
-
-import HC_exporting from "highcharts/modules/exporting";
 import { TranslateService } from "@ngx-translate/core";
 import { CrudService } from "src/app/core/service/crud.service";
 import { AppInjector } from "src/app/app.injector";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { SERVER_URL } from "src/app/shared/url/url.domain";
-HC_exporting(Highcharts);
+
+import * as moment from "moment";
+import "moment/locale/pt-br";
+import "moment/locale/en-gb";
+import "moment/locale/es";
+import { AppTranslateService } from "src/app/core/service/translate.service";
 
 @Component({
   selector: "app-dashboard",
@@ -43,7 +43,8 @@ export class DashboardComponent extends BaseComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    public translate: TranslateService
+    public translate: TranslateService,
+    public translateService: AppTranslateService
   ) {
     super();
     this.translate = translate;
@@ -209,6 +210,25 @@ export class DashboardComponent extends BaseComponent implements OnInit {
           this.notification.error(error);
         }
       );
+  }
+
+  formattedDate(date: string): string {
+    let formattedDate: string;
+    let language = this.translateService.getLang();
+
+    if (language === "pt") {
+      moment.locale("pt-br");
+      formattedDate = moment(date).format("DD/MM/YYYY");
+    } else if (language === "en") {
+      moment.locale("en-gb");
+      formattedDate = moment(date).format("MM/DD/YYYY");
+    } else if (language === "es") {
+      moment.locale("es");
+      formattedDate = moment(date).format("DD/MM/YYYY");
+    } else {
+      formattedDate = date; // Use um formato padrão caso o idioma não seja suportado
+    }
+    return formattedDate;
   }
 
   getServiceURL(): string {

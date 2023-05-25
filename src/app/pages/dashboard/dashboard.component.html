@@ -25,9 +25,9 @@
   </div>
   <div class="col-12 col-sm-6 col-md-3 mb-4">
     <app-card
-      [title]="translate.instant('CARD_TITLE_TOTAL_SUPPLIERS')"
-      [value]="'0'"
-      [icon]="'fas fa-user'"
+      [title]="translate.instant('CARD_DATE')"
+      [value]="formattedDate(event.date)"
+      [icon]="'fas fa-calendar-check'"
       [color]="'info'"
     ></app-card>
   </div>
@@ -43,7 +43,7 @@
   <div class="col-12 col-sm-6 col-md-3 mb-4">
     <app-card
       *ngIf="event"
-      [title]="translate.instant('CARD_DATE')"
+      [title]="translate.instant('TIME_LEFT')"
       [value]="resultCountdown"
       [icon]="'fas fa-calendar'"
       [color]="'warning'"

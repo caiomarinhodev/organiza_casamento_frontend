@@ -154,5 +154,12 @@
   "DOWNLOAD_PDF": "Download Guests PDF",
   "SEND_INVITE": "Send Invite",
   "SEND_INVITE_DESCRIPTION": "Send an invitation to your guests.",
-  "SEND": "Send"
+  "SEND": "Send",
+  "COLOR_PALLETE": "Color Pallets",
+  "COLOR_1": "Color 1",
+  "COLOR_2": "Color 2",
+  "COLOR_3": "Color 3",
+  "COLOR_4": "Color 4",
+  "OBSERVATIONS": "Observations",
+  "TIME_LEFT": "Time Left"
 }

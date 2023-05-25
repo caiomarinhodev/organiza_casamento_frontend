@@ -153,5 +153,12 @@
   "DOWNLOAD_PDF": "Descargar Invitados PDF",
   "SEND_INVITE": "Enviar invitación",
   "SEND_INVITE_DESCRIPTION": "Se enviará un correo electrónico a los invitados seleccionados.",
-  "SEND": "Enviar"
+  "SEND": "Enviar",
+  "COLOR_PALLETE": "Paleta de colores",
+  "COLOR_1": "Color 1",
+  "COLOR_2": "Color 2",
+  "COLOR_3": "Color 3",
+  "COLOR_4": "Color 4",
+  "OBSERVATIONS": "Observaciones",
+  "TIME_LEFT": "Tiempo restante"
 }

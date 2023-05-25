@@ -154,5 +154,12 @@
   "DOWNLOAD_PDF": "Download Convidados PDF",
   "SEND_INVITE": "Enviar Convite",
   "SEND_INVITE_DESCRIPTION": "Envie um convite para seus convidados.",
-  "SEND": "Enviar"
+  "SEND": "Enviar",
+  "COLOR_PALLETE": "Paleta de Cores",
+  "COLOR_1": "Cor 1",
+  "COLOR_2": "Cor 2",
+  "COLOR_3": "Cor 3",
+  "COLOR_4": "Cor 4",
+  "OBSERVATIONS": "Observações",
+  "TIME_LEFT": "Tempo Restante"
 }

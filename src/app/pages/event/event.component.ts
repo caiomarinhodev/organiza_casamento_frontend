@@ -1,8 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { FormControl, Validators } from "@angular/forms";
-import { TranslateService } from "@ngx-translate/core";
 import { BaseEditComponent } from "src/app/core/interface/base-edit.component";
 
 @Component({
@@ -11,16 +10,58 @@ import { BaseEditComponent } from "src/app/core/interface/base-edit.component";
   styleUrls: ["./event.component.css"],
 })
 export class EventComponent extends BaseEditComponent implements OnInit {
+  color1: string = "#ffffff";
+
+  color2: string = "#000000";
+
+  color3: string = "#ffffff";
+
+  color4: string = "#0082ff";
+
   constructor(
     private route: ActivatedRoute,
-    public translate: TranslateService
   ) {
     super();
-    this.translate = translate;
   }
 
   override ngOnInit(): void {
     super.ngOnInit();
+  }
+
+  
+
+  fillColors(): void {
+    console.log("fillColors", this.item);
+    if (this.item.color1) {
+      this.color1 = this.item.color1;
+    }
+    if (this.item.color2) {
+      this.color2 = this.item.color2;
+    }
+    if (this.item.color3) {
+      this.color3 = this.item.color3;
+    }
+    if (this.item.color4) {
+      this.color4 = this.item.color4;
+    }
+  }
+
+  setColorsOnForm(): void {
+    console.log(
+      "setColorsOnForm",
+      this.color1,
+      this.color2,
+      this.color3,
+      this.color4
+    );
+    this.editForm.controls["color1"].setValue(this.color1);
+    this.editForm.controls["color2"].setValue(this.color2);
+    this.editForm.controls["color3"].setValue(this.color3);
+    this.editForm.controls["color4"].setValue(this.color4);
+  }
+
+  protected override preUpdate(): void {
+    this.setColorsOnForm();
   }
 
   override getFormControls(): Object {
@@ -36,6 +77,11 @@ export class EventComponent extends BaseEditComponent implements OnInit {
       style: new FormControl(undefined, [Validators.required]),
       budget: new FormControl(undefined, [Validators.required]),
       guests: new FormControl(undefined, [Validators.required]),
+      observation: new FormControl(undefined, [Validators.required]),
+      color1: new FormControl(undefined, [Validators.required]),
+      color2: new FormControl(undefined, [Validators.required]),
+      color3: new FormControl(undefined, [Validators.required]),
+      color4: new FormControl(undefined, [Validators.required]),
     };
   }
 
@@ -61,5 +107,6 @@ export class EventComponent extends BaseEditComponent implements OnInit {
     delete this.item.bride;
     delete this.item.updated_at;
     this.editForm.setValue(this.item);
+    this.fillColors();
   }
 }

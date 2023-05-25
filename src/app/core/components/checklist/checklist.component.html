@@ -6,12 +6,12 @@
     <mat-list>
       <mat-list-item *ngFor="let task of tasks">
         <mat-checkbox (change)="markCompleted(task)" [checked]="task.is_completed">
-          <span
+          <span matListItemTitle
             [ngStyle]="{
               'text-decoration': task.is_completed ? 'line-through' : 'none'
             }"
-            >{{ task.title }}</span
-          >
+            >{{ task.title }}</span>
+          <span matListItemLine>{{ task.recommended_date }}</span>
         </mat-checkbox>
       </mat-list-item>
     </mat-list>
