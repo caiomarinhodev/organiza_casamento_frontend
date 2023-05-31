@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="row mb-4" style="margin-top: 24px">
+    <div class="col-sm-9">
+      <h1 translate>OUR_IDEAS</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mx-2 my-4"
+          *ngFor="let idea of items">
+          <mat-card class="idea-card new-idea-card">
+            <mat-card-content>
+              <mat-icon class="pin-icon">turned_in</mat-icon>
+              <h4 class="idea-title">{{ idea.title }}</h4>
+              <p class="idea-description">{{ idea.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-icon-button color="warn" (click)="removeIdea(idea)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+        <mat-card class="idea-card new-idea-card" *ngIf="showNewIdeaForm">
+          <mat-card-content>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Título"
+                [(ngModel)]="newIdea.title"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <textarea
+                matInput
+                placeholder="Descrição"
+                [(ngModel)]="newIdea.description"
+              ></textarea>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="saveNewIdea()">
+              Salvar
+            </button>
+            <button mat-icon-button color="warn" (click)="cancelNewIdea()">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+
+        <button
+          mat-fab
+          color="secondary"
+          class="add-button"
+          (click)="showNewIdeaForm = true"
+          *ngIf="!showNewIdeaForm"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+
+        <div class="loading-spinner" *ngIf="loading">
+          <mat-spinner></mat-spinner>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-loading
+  [show]="loading"
+  [config]="{
+    backdropBorderRadius: '3px',
+    backdropBackgroundColour: 'rgba(0,0,0,0.8)',
+    primaryColour: '#ffffff',
+    secondaryColour: '#ffffff',
+    tertiaryColour: '#ffffff'
+  }"
+></ngx-loading>

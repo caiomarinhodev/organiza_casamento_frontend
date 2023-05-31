@@ -23,6 +23,7 @@ import { AddArtifactComponent } from "./pages/artifacts/add/add.component";
 import { DeleteArtifactComponent } from "./pages/artifacts/delete/delete.component";
 import { FormRSVPComponent } from "./pages/guests/rsvp/rsvp-form.component";
 import { ManualAccessGuard } from "./guards/manual-access.guard";
+import { ListIdeasComponent } from "./pages/idea/list/list.component";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, data: { title: "" } },
@@ -116,6 +117,28 @@ const routes: Routes = [
         path: "",
         data: {},
         component: ListArtifactsComponent,
+      },
+    ],
+  },
+  {
+    path: "ideas",
+    component: HomePageComponent,
+    data: { title: "" },
+    children: [
+      {
+        path: "delete/:id",
+        data: {},
+        component: DeleteArtifactComponent,
+      },
+      {
+        path: "create",
+        data: {},
+        component: AddArtifactComponent,
+      },
+      {
+        path: "",
+        data: {},
+        component: ListIdeasComponent,
       },
     ],
   },

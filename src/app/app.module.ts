@@ -46,6 +46,7 @@ import { RSVPFormModule } from "./pages/guests/rsvp/rsvp-form.module";
 import { CommonService } from "./service/common/common.service";
 import { ModalSendModule } from "./pages/guests/modal-send/modal-send.module";
 import { ColorPickerModule } from "ngx-color-picker";
+import { ListIdeasModule } from "./pages/idea/list/list.module";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -97,7 +98,8 @@ export function createTranslateLoader(http: HttpClient) {
     DeleteArtifactModule,
     RSVPFormModule,
     ModalSendModule,
-    ColorPickerModule
+    ColorPickerModule,
+    ListIdeasModule
   ],
   providers: [
     AppTranslateService,

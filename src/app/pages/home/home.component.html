@@ -81,6 +81,17 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
+        <a class="nav-link" routerLink="/ideas/">
+          <i class="fas fa-fw fa-lightbulb"></i>
+          <span translate>OUR_IDEAS</span></a
+        >
+      </li>
+
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
         <a class="nav-link" routerLink="/profile/{{ this.user.data_user.id }}">
           <i class="fas fa-fw fa-user-circle"></i>
           <span translate>PROFILE</span></a
