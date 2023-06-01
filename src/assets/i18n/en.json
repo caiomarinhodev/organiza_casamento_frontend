@@ -162,5 +162,7 @@
   "COLOR_4": "Color 4",
   "OBSERVATIONS": "Observations",
   "TIME_LEFT": "Time Left",
-  "OUR_IDEAS": "Our Ideas"
+  "OUR_IDEAS": "Our Ideas",
+  "ALERT_CENTER": "Alert Center",
+  "MARK_ALL_AS_READ": "Mark all as read"
 }

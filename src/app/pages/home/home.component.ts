@@ -4,6 +4,9 @@ import { TranslateService } from "@ngx-translate/core";
 import { AppInjector } from "../../app.injector";
 import { NotificationModule } from "../../core/module/notification/notification.module";
 import { UserService } from "../../service/user/user.service";
+import { CrudService } from "src/app/core/service/crud.service";
+import * as moment from "moment";
+import { AppTranslateService } from "src/app/core/service/translate.service";
 
 type DataUserProps = {
   id: number;
@@ -57,6 +60,8 @@ export class HomePageComponent {
    */
   logged = false;
 
+  notifications: any = [];
+
   user: UserProps = {
     data_user: { id: 0, birthdate: "", cpf: "", custom_user: 0, phone: "" },
     event: 0,
@@ -83,17 +88,21 @@ export class HomePageComponent {
     },
   };
 
+  protected service: CrudService = AppInjector.get(CrudService);
+
   constructor(
     vcr: ViewContainerRef,
     public notification: NotificationModule,
     private translate: TranslateService,
-    private userService: UserService
+    private userService: UserService,
+    public translateService: AppTranslateService
   ) {
     this.notification.setView(vcr);
     this.configTranslate();
     if (this.userService.isLogged()) {
       this.user = this.userService.getUser();
-      console.log('[home box page] user: ', this.user);
+      this.getNotifications();
+      console.log("[home box page] user: ", this.user);
     } else {
       this.router.navigate(["/login"]);
     }
@@ -126,5 +135,82 @@ export class HomePageComponent {
 
   getYear() {
     return new Date().getFullYear();
+  }
+
+  formattedDate(date: string): string {
+    let formattedDate: string;
+    let language = this.translateService.getLang();
+
+    if (language === "pt") {
+      moment.locale("pt-br");
+      formattedDate = moment(date).format("DD/MM/YYYY HH:mm");
+    } else if (language === "en") {
+      moment.locale("en-gb");
+      formattedDate = moment(date).format("MM/DD/YYYY HH:mm");
+    } else if (language === "es") {
+      moment.locale("es");
+      formattedDate = moment(date).format("DD/MM/YYYY HH:mm");
+    } else {
+      formattedDate = date; // Use um formato padrão caso o idioma não seja suportado
+    }
+    return formattedDate;
+  }
+
+  markAsRead(notification: any) {
+    this.service
+      .postCustom(
+        "user/" +
+          this.user.user.id +
+          "/notifications/" +
+          notification.id +
+          "/mark_read/",
+        {
+          notification_id: notification.id,
+          user_id: this.user.user.id,
+          is_read: true,
+        }
+      )
+      .subscribe(
+        (result: any) => {
+          console.log("[markAsRead]", result);
+          this.getNotifications();
+        },
+        (error: any) => {
+          console.log("[markAsRead]", error);
+        }
+      );
+  }
+
+  markAllAsRead() {
+    this.service
+      .postCustom(
+        "user/" + this.user.user.id + "/notifications/mark_all_read/",
+        { user_id: this.user.user.id }
+      )
+      .subscribe(
+        (result: any) => {
+          console.log("[markAllAsRead]", result);
+          this.getNotifications();
+        },
+        (error: any) => {
+          console.log("[markAllAsRead]", error);
+        }
+      );
+  }
+
+  getNotifications() {
+    this.service
+      .getURL("user/" + this.user.user.id + "/notifications")
+      .subscribe(
+        (result: any) => {
+          this.notifications = result.filter(
+            (notification: any) => notification.is_read === false
+          );
+          console.log("[getNotifications]", result);
+        },
+        (error: any) => {
+          console.log("[getNotifications]", error);
+        }
+      );
   }
 }

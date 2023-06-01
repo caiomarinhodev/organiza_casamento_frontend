@@ -28,6 +28,11 @@ export class FormRSVPComponent extends BaseEditComponent implements OnInit {
     });
   }
 
+  override ngOnInit(): void {
+    super.ngOnInit();
+    this.markAsReceived();
+  }
+
   protected override handleUpdate(result: any): void {
     this.postUpdate();
     this.notification.successText("RSVP enviado com sucesso!");
@@ -50,6 +55,27 @@ export class FormRSVPComponent extends BaseEditComponent implements OnInit {
     }
   }
 
+  markAsReceived(): void {
+    if (this.id && this.id !== "null") {
+      let form = this.item;
+      form.is_received = true;
+      this.service
+    .updatePartial(this.getServiceURL(), this.id, form)
+        .subscribe(
+          (result) => {
+            this.notification.successText("RSVP recebido com sucesso!");
+            this.item = result;
+            this.postGetItem();
+            this.loading = false;
+          },
+          (error) => {
+            this.notification.error(error);
+            this.loading = false;
+          }
+        );
+    }
+  }
+
   override getFormControls(): Object {
     return {
       id: new FormControl(undefined, []),
@@ -61,6 +87,7 @@ export class FormRSVPComponent extends BaseEditComponent implements OnInit {
       has_dependents: new FormControl(false, []),
       dependents: new FormControl(undefined, []),
       event: new FormControl(this.service.getUser().event, []),
+      is_received: new FormControl(true, []),
     };
   }
 
