@@ -27,27 +27,35 @@
                 formControlName="phone"
               />
             </div>
-            <div class="row col-12 form-group">
+            <div class="form-group">
               <div class="">
                 <label for="confirmed" translate>CONFIRMED</label>
-                <input
-                  type="checkbox"
-                  class="form-control"
-                  id="confirmed"
-                  formControlName="confirmed"
-                />
+                <div class="row">
+                  <div class="col-2 col-sm-1 col-md-1">
+                    <input
+                      type="checkbox"
+                      class="form-control"
+                      id="confirmed"
+                      formControlName="confirmed"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="row col-12 form-group">
+            <div class="form-group">
               <div class="">
                 <label for="has_dependents" translate>HAS_DEPENDENTS</label>
-                <input
-                  type="checkbox"
-                  class="form-control"
-                  id="has_dependents"
-                  (change)="this.updateDependents($event)"
-                  formControlName="has_dependents"
-                />
+                <div class="row">
+                  <div class="col-2 col-sm-1 col-md-1">
+                    <input
+                      type="checkbox"
+                      class="form-control"
+                      id="has_dependents"
+                      (change)="this.updateDependents($event)"
+                      formControlName="has_dependents"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <div

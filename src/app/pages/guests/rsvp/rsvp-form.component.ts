@@ -30,7 +30,6 @@ export class FormRSVPComponent extends BaseEditComponent implements OnInit {
 
   override ngOnInit(): void {
     super.ngOnInit();
-    this.markAsReceived();
   }
 
   protected override handleUpdate(result: any): void {
@@ -53,6 +52,11 @@ export class FormRSVPComponent extends BaseEditComponent implements OnInit {
         }
       );
     }
+  }
+
+  protected override preUpdate(): void {
+      this.item.is_received = true;
+      this.editForm.controls["is_received"].setValue(true);
   }
 
   markAsReceived(): void {

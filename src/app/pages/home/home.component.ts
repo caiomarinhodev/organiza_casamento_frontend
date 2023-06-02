@@ -1,12 +1,19 @@
-import { Component, ViewContainerRef, ViewEncapsulation } from "@angular/core";
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewContainerRef,
+  ViewEncapsulation
+} from "@angular/core";
 import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
+import * as moment from "moment";
+import { interval } from "rxjs";
+import { CrudService } from "src/app/core/service/crud.service";
+import { AppTranslateService } from "src/app/core/service/translate.service";
 import { AppInjector } from "../../app.injector";
 import { NotificationModule } from "../../core/module/notification/notification.module";
 import { UserService } from "../../service/user/user.service";
-import { CrudService } from "src/app/core/service/crud.service";
-import * as moment from "moment";
-import { AppTranslateService } from "src/app/core/service/translate.service";
 
 type DataUserProps = {
   id: number;
@@ -52,7 +59,7 @@ type UserProps = {
   styleUrls: ["./home.component.less"],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit, OnDestroy {
   /**
    * Flags if the user is logged.
    *
@@ -61,6 +68,8 @@ export class HomePageComponent {
   logged = false;
 
   notifications: any = [];
+
+  timeInterval: any;
 
   user: UserProps = {
     data_user: { id: 0, birthdate: "", cpf: "", custom_user: 0, phone: "" },
@@ -101,10 +110,26 @@ export class HomePageComponent {
     this.configTranslate();
     if (this.userService.isLogged()) {
       this.user = this.userService.getUser();
-      this.getNotifications();
       console.log("[home box page] user: ", this.user);
     } else {
       this.router.navigate(["/login"]);
+    }
+  }
+
+  ngOnInit(): void {
+    this.getNotifications();
+
+    this.timeInterval = interval(5000).subscribe(() => {
+      this.getNotifications();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.timeInterval) {
+      this.timeInterval.unsubscribe();
+      this.timeInterval = null;
+      this.timeInterval = undefined;
+      clearInterval(this.timeInterval);
     }
   }
 
