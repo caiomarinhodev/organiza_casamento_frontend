@@ -65,19 +65,19 @@
             <label for="size" translate>SIZE</label>
             <select class="form-control" id="size" formControlName="size">
               <option value="Elopment Wedding" translate>
-                Elopment Wedding
+                Elopment Wedding (até 10 pessoas)
               </option>
-              <option value="Mini Wedding" translate>Mini Wedding</option>
+              <option value="Mini Wedding" translate>Mini Wedding (até 30 pessoas)</option>
               <option value="Casamento Pequeno" translate>
-                Casamento Pequeno
+                Casamento Pequeno (até 50 pessoas)
               </option>
-              <option value="Casamento Médio" translate>Casamento Médio</option>
+              <option value="Casamento Médio" translate>Casamento Médio/Tradicional (até 100 pessoas) </option>
               <option value="Casamento Grande" translate>
-                Casamento Grande
+                Casamento Grande (até 200 pessoas)
               </option>
-              <option value="Mega Wedding" translate>Mega Wedding</option>
+              <option value="Mega Wedding" translate>Mega Wedding (300 ou mais pessoas)</option>
               <option value="Destination Wedding" translate>
-                Destination Wedding
+                Destination Wedding (até 60 pessoas)
               </option>
             </select>
           </div>
@@ -120,6 +120,8 @@
               class="form-control"
               id="budget"
               formControlName="budget"
+              currencyMask
+              [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
             />
           </div>
           <div class="form-group">

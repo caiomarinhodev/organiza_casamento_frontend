@@ -22,6 +22,7 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
   dataSource = new MatTableDataSource<Element>(this.source);
 
   selectedHash = "";
+  selectedRow: any;
 
   //@ts-ignore
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -67,6 +68,12 @@ export class ListGuestsComponent extends BaseListComponent implements OnInit {
       item.hash = this.generateRSVP(item.id);
       return item;
     });
+  }
+
+  changeSelectedHash(row: any) {
+    console.log("[list-guests] user", row);
+    this.selectedHash = row.hash
+    this.selectedRow = row;
   }
 
   override listItems(): void {

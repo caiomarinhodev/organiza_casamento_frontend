@@ -13,6 +13,7 @@ import { AngularMaterialModule } from "src/app/shared/interface/angular-material
 import { UserService } from "../../service/user/user.service";
 import { EventComponent } from "./event.component";
 import { ColorPickerModule } from "ngx-color-picker";
+import { NgxCurrencyModule } from "ngx-currency";
 
 @NgModule({
   declarations: [EventComponent],
@@ -32,7 +33,8 @@ import { ColorPickerModule } from "ngx-color-picker";
     ToolbarModule,
     SelectLanguageModule,
     MatMomentDateModule,
-    ColorPickerModule
+    ColorPickerModule,
+    NgxCurrencyModule
   ],
   exports: [ColorPickerModule],
   providers: [UserService],

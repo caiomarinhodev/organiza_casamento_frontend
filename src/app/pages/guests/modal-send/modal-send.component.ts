@@ -9,8 +9,9 @@ import { UserService } from "src/app/service/user/user.service";
   styleUrls: ["./modal-send.component.css"],
 })
 export class ModalSendComponent extends BaseComponent implements OnInit {
-  phone = "";
-  email = "";
+  @Input() phone? = "";
+
+  @Input() email? = "";
 
   user: any;
   selectEmail = false;

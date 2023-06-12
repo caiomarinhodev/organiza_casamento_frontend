@@ -111,7 +111,7 @@
                       data-toggle="modal"
                       data-target="#modalSend"
                       type="button"
-                      (click)="this.selectedHash = row.hash"
+                      (click)="changeSelectedHash(row)"
                     >
                       <i class="fab fa-telegram-plane"></i>
                     </button>
@@ -147,6 +147,8 @@
 
 <app-modal-send
 [url]="selectedHash"
+[phone]="selectedRow?.phone? selectedRow.phone : ''"
+[email]="selectedRow?.email? selectedRow.email : ''"
 ></app-modal-send>
 
 <ngx-loading

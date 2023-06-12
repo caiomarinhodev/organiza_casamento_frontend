@@ -1,5 +1,5 @@
 import { Injector, NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { BrowserModule, bootstrapApplication } from "@angular/platform-browser";
 
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -47,10 +47,20 @@ import { CommonService } from "./service/common/common.service";
 import { ModalSendModule } from "./pages/guests/modal-send/modal-send.module";
 import { ColorPickerModule } from "ngx-color-picker";
 import { ListIdeasModule } from "./pages/idea/list/list.module";
+import { MatPaginatorIntl } from "@angular/material/paginator";
+import { getPortuguesePaginatorIntl } from "./portuguese-paginator-intl";
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxCurrencyModule } from "ngx-currency";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
+
+export const maskConfigFunction: () => Partial<IConfig> = () => {
+  return {
+    validation: false,
+  };
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -99,7 +109,9 @@ export function createTranslateLoader(http: HttpClient) {
     RSVPFormModule,
     ModalSendModule,
     ColorPickerModule,
-    ListIdeasModule
+    ListIdeasModule,
+    NgxMaskModule.forRoot(maskConfigFunction),
+    NgxCurrencyModule
   ],
   providers: [
     AppTranslateService,
@@ -108,6 +120,7 @@ export function createTranslateLoader(http: HttpClient) {
     SearchService,
     CrudService,
     CommonService,
+    { provide: MatPaginatorIntl, useValue: getPortuguesePaginatorIntl() }, // Usando a tradução em português
   ],
   bootstrap: [AppComponent],
 })
@@ -116,3 +129,5 @@ export class AppModule {
     setAppInjector(this.injector);
   }
 }
+
+

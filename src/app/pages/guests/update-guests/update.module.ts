@@ -11,6 +11,7 @@ import { ControlMessageModule } from "src/app/core/components/control-message/co
 import { ToolbarModule } from "src/app/core/components/toolbar/toolbar.module";
 import { AngularMaterialModule } from "src/app/shared/interface/angular-material.module";
 import { UpdateGuestComponent } from "./update.component";
+import { NgxMaskModule } from "ngx-mask";
 
 @NgModule({
   declarations: [UpdateGuestComponent],
@@ -30,6 +31,7 @@ import { UpdateGuestComponent } from "./update.component";
     RouterModule,
     ToolbarModule,
     AngularMaterialModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
 })

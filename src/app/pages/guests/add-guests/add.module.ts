@@ -12,6 +12,7 @@ import { AngularMaterialModule } from 'src/app/shared/interface/angular-material
 import { AddGuestComponent } from './add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ControlMessageModule } from 'src/app/core/components/control-message/control-message.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ControlMessageModule } from 'src/app/core/components/control-message/co
         }),
         RouterModule,
         ToolbarModule,
-        AngularMaterialModule
+        AngularMaterialModule,
+        NgxMaskModule.forRoot(),
     ],
     providers: []
 })
